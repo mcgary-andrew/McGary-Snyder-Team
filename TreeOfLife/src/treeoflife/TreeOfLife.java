@@ -6,6 +6,10 @@
 package treeoflife;
 
 import byui.cit260.TreeOfLife.model.Player;
+import byui.cit260.TreeOfLife.model.ArmorPiece;
+import byui.cit260.TreeOfLife.model.ArmorItem;
+
+
 
 /**
  *
@@ -22,11 +26,46 @@ public class TreeOfLife {
         Player playerThree = new Player();
         
         playerOne.setPlayerName("Lehi");
+        playerOne.setKnowledge(1000);
+        playerOne.setObedience(1000);
+        playerOne.setFaith(1000);
+        
         playerTwo.setPlayerName("Nehpi");
+        playerTwo.setObedience(800);
+        playerTwo.setKnowledge(500);
+        playerTwo.setFaith(1000);
+        
         playerThree.setPlayerName("Sam");
+        playerThree.setObedience(500);
+        playerThree.setKnowledge(200);
+        playerThree.setFaith(300);
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        ArmorPiece armorOne = new ArmorPiece();
+        ArmorPiece armorTwo = new ArmorPiece();
+        ArmorPiece armorThree = new ArmorPiece();
+        ArmorPiece armorFour = new ArmorPiece();
+        ArmorItem armorItemOne = new ArmorItem();
+        ArmorItem armorItemTwo = new ArmorItem();
+
+        
+        armorOne.setArmorPieceName("Helmet of Salvation");
+        armorOne.setFaithRequired(1100);
+        armorOne.setKnowledgeRequired(1000);
+        armorOne.setObedienceRequired(900);
+        
+        
+        armorTwo.setArmorPieceName("Shield of Faith");
+        armorTwo.setFaithRequired(900);
+        
+        armorThree.setArmorPieceName("Sword - spirit/word of God");
+        armorThree.setKnowledgeRequired(900);
+        
+        armorFour.setArmorPieceName("Breastplate of Righteousness");
+        armorFour.setObedienceRequired(900);
+        
         
     }
     

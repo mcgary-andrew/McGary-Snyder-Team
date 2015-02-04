@@ -12,9 +12,9 @@ public class Player implements Serializable{
     
     //class instance variables
     private String PlayerName;
-    private String Obedience;
-    private String Faith;
-    private String Knowledge;
+    private int Obedience;
+    private int Faith;
+    private int Knowledge;
 
     public Player() {
     }
@@ -29,27 +29,27 @@ public class Player implements Serializable{
         this.PlayerName = PlayerName;
     }
 
-    public String getObedience() {
+    public int getObedience() {
         return Obedience;
     }
 
-    public void setObedience(String Obedience) {
+    public void setObedience(int Obedience) {
         this.Obedience = Obedience;
     }
 
-    public String getFaith() {
+    public int getFaith() {
         return Faith;
     }
 
-    public void setFaith(String Faith) {
+    public void setFaith(int Faith) {
         this.Faith = Faith;
     }
 
-    public String getKnowledge() {
+    public int getKnowledge() {
         return Knowledge;
     }
 
-    public void setKnowledge(String Knowledge) {
+    public void setKnowledge(int Knowledge) {
         this.Knowledge = Knowledge;
     }
 
