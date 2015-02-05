@@ -12,8 +12,8 @@ import byui.cit260.TreeOfLife.model.ArmorPiece;
 public class ArmorItem implements Serializable{
     
     //class instance variables
-    private String ArmorAbility;
-    private String ArmorCost;
+    private int ArmorAbility;
+    private int ArmorCost;
 
 
     public ArmorItem() {
@@ -21,19 +21,19 @@ public class ArmorItem implements Serializable{
     
     
 
-    public String getArmorAbility() {
+    public int getArmorAbility() {
         return ArmorAbility;
     }
 
-    public void setArmorAbility(String ArmorAbility) {
+    public void setArmorAbility(int ArmorAbility) {
         this.ArmorAbility = ArmorAbility;
     }
 
-    public String getArmorCost() {
+    public int getArmorCost() {
         return ArmorCost;
     }
 
-    public void setArmorCost(String ArmorCost) {
+    public void setArmorCost(int ArmorCost) {
         this.ArmorCost = ArmorCost;
     }
 

@@ -59,13 +59,18 @@ public class TreeOfLife {
         
         armorTwo.setArmorPieceName("Shield of Faith");
         armorTwo.setFaithRequired(900);
+//        armorItemOne.setArmorAbility(100);
+//        armorItemTwo.setArmorCost(50);
         
         armorThree.setArmorPieceName("Sword - spirit/word of God");
         armorThree.setKnowledgeRequired(900);
+//        armorItemOne.setArmorAbility(100);
+//        armorItemTwo.setArmorCost(50);
         
         armorFour.setArmorPieceName("Breastplate of Righteousness");
         armorFour.setObedienceRequired(900);
-        
+//        armorItemOne.setArmorAbility(100);
+//        armorItemTwo.setArmorCost(50);
         
     }
     
