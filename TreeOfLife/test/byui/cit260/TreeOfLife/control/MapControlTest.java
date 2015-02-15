@@ -99,5 +99,87 @@ public class MapControlTest {
         assertEquals(expResult, result, 0.01);
         
     }
+    public void testCalcArmorStatusValue() {
+        System.out.println("calcArmorStatusValue");
+        /*****************
+         * Test Case #1
+         *****************/
+        System.out.println("\tTest case #1");
+        
+        // input values for test case 1
+        double hOfSValue = 100;
+        double sOfFValue = 100;
+        double sWOfGValue = 100;
+        double bOfRValue = 100;
+        
+        double expResult = 100; //expected output returned value
+        
+        //create instance of MapControl class
+        MapControl instance = new MapControl();
+        
+        //call function to run test
+        double result = instance.calcArmorStatusValue(hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.01);
+        
+        /*****************
+         * Test Case #2
+         *****************/
+        System.out.println("\tTest case #2");
+        
+        // input values for test case 2
+        hOfSValue = 0;
+        sOfFValue = 100;
+        sWOfGValue = 0;
+        bOfRValue = 0;
+        
+        expResult = -999; //expected output returned value
+        
+        //call function to run test
+        result = instance.calcArmorStatusValue(hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.01);
+        
+        /*****************
+         * Test Case #3
+         *****************/
+        System.out.println("\tTest case #3");
+        
+        // input values for test case 3
+        hOfSValue = 0;
+        sOfFValue = 0;
+        sWOfGValue = 100;
+        bOfRValue = 0;
+        
+        expResult = -999; //expected output returned value
+        
+        //call function to run test
+        result = instance.calcArmorStatusValue(hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.01);
+        
+        /*****************
+         * Test Case #4
+         *****************/
+        System.out.println("\tTest case #4");
+        
+        // input values for test case 4
+        hOfSValue = 0;
+        sOfFValue = 0;
+        sWOfGValue = 0;
+        bOfRValue = 100;
+        
+        expResult = -999; //expected output returned value
+        
+        //call function to run test
+        result = instance.calcArmorStatusValue(hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.01);
+    }
     
 }
+    
