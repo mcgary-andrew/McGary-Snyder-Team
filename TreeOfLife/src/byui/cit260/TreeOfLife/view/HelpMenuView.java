@@ -11,7 +11,7 @@ package byui.cit260.TreeOfLife.view;
  */
 public class HelpMenuView {
     
-    public final String HELP = "\n"
+    public static final String HELP = "\n"
             + "\n-----------------------------------------"
             + "\n| Help Menu"
             + "\n-----------------------------------------"

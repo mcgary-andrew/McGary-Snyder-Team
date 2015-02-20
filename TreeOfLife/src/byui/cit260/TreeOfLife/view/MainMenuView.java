@@ -96,6 +96,7 @@ public class MainMenuView {
 
     private void displayHelpMenu() {
         System.out.println("*** displayHelpMenu function called ***");
+        System.out.println(HelpMenuView.HELP);
     }
 
     private void saveGame() {
