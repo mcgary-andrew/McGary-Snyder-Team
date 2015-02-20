@@ -5,6 +5,8 @@
  */
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.control.ProgramControl;
+import byui.cit260.TreeOfLife.model.Player;
 import java.util.Scanner;
 
 /**
@@ -17,7 +19,19 @@ public class StartProgramView {
     }
     public void startProgram(){
         this.displayBanner();
+        
+        //prompt the player to enter their name
         String playersName = this.getPlayersName();
+        
+        //Creat and Save the player object
+        Player player = ProgramControl.createPlayer(playersName);
+        
+        // Display a personalized welcome message
+        this.displayWelcomeMessage(player);
+        
+        //Display the Main Menu.
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
         
     }           
 
@@ -74,4 +88,13 @@ public class StartProgramView {
         
         return playersName; // return the name
     }
+
+    private void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n====================================");
+        System.out.println("\tWelcome to the game " + player.getPlayerName() + "!");
+        System.out.println("\tWe hope you have a lot of fun!");
+        System.out.println("======================================");
+        
+    }
+    
 }

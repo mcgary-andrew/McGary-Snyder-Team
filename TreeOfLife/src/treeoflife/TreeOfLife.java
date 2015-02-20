@@ -11,18 +11,31 @@ import byui.cit260.TreeOfLife.model.ArmorPiece;
 import byui.cit260.TreeOfLife.model.ArmorItem;
 
 
-
-
-
 /**
  *
  * @author Andrew
  */
 public class TreeOfLife {
 
-    /**
-     * @param args the command line arguments
-     */
+//    private static Game currentGame = null;
+
+//    public static Game getCurrentGame() {
+//        return currentGame;
+//    }
+//
+//    public static void setCurrentGame(Game currentGame) {
+//        TreeOfLife.currentGame = currentGame;
+//    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        TreeOfLife.player = player;
+    }
+    private static Player player = null;
+    
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
@@ -79,6 +92,5 @@ public class TreeOfLife {
 ////        armorItemOne.setArmorAbility(100);
 ////        armorItemTwo.setArmorCost(50);
         
-    }
-    
+    } 
 }

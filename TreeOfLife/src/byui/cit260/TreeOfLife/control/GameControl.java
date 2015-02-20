@@ -5,10 +5,16 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.model.Player;
+
 /**
  *
  * @author Andrew
  */
 public class GameControl {
+    
+    public static void createNewGame(Player player){
+        System.out.println("\n*** createNewGame stub function called ***");
+    }
     
 }
