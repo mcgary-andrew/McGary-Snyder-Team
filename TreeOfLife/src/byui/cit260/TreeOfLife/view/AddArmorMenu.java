@@ -5,28 +5,23 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.GameControl;
 import java.util.Scanner;
-import treeoflife.TreeOfLife;
-
 
 /**
  *
  * @author Andrew
  */
-public class MainMenuView {
-    
-    private final String MENU = "\n"
+public class AddArmorMenu {
+    public static final String MENU = "\n"
             + "\n-----------------------------------------"
-            + "\n| Main Menu"
+            + "\n| Add Armor Menu"
             + "\n-----------------------------------------"
-            + "\nB - Begin Game"
-            + "\nH - Help"
-            + "\nS - Save"
+            + "\nF - Add Sheild of Faith"
+            + "\nS - Add Sword of God"
+            + "\nR - Add Breastplate of Righteousness"
             + "\nE - Exit"
             + "\n-----------------------------------------";
-
-
+    
     public void displayMenu() {
         
         char selection = ' ';
@@ -49,7 +44,7 @@ public class MainMenuView {
         while(!valid){//while a valid selection has not been retrieved
             
             //prompt for the selection
-            System.out.println("Main Menu Selection:");
+            System.out.println("Add Armor Selection:");
             
             //get the name from the keyboard and trim off the blanks
             selection = keyboard.nextLine();
@@ -69,14 +64,14 @@ public class MainMenuView {
     private void doAction(char selection) {
 
         switch (selection){
-            case 'B': // Begin game
-                this.startNewGame();
+            case 'F': // Begin game
+                this.addSofF();
                 break;
-            case 'H': // Help
-                this.displayHelpMenu();
+            case 'S': // Help
+                this.addSofG();
                 break;
-            case 'S': //Save
-                this.saveGame();
+            case 'R': //Save
+                this.addBofR();
                 break;
             case 'E': // Exit
                 return;
@@ -86,20 +81,18 @@ public class MainMenuView {
         }
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(TreeOfLife.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void addSofF() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void displayHelpMenu() {
-        System.out.println(HelpMenuView.HELP);
+    private void addSofG() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void saveGame() {
-       System.out.println("*** startExistingGame function called ***");
+    private void addBofR() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
     
 }

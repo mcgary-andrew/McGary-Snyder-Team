@@ -5,24 +5,21 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.GameControl;
+import byui.cit260.TreeOfLife.control.InventoryControl;
 import java.util.Scanner;
 import treeoflife.TreeOfLife;
-
 
 /**
  *
  * @author Andrew
  */
-public class MainMenuView {
-    
+public class ArmorMenuView {
     private final String MENU = "\n"
             + "\n-----------------------------------------"
-            + "\n| Main Menu"
+            + "\n| Armor Menu"
             + "\n-----------------------------------------"
-            + "\nB - Begin Game"
-            + "\nH - Help"
-            + "\nS - Save"
+            + "\nA - Add Armor Attributes"
+            + "\nC - Check Armor Levels"
             + "\nE - Exit"
             + "\n-----------------------------------------";
 
@@ -49,7 +46,7 @@ public class MainMenuView {
         while(!valid){//while a valid selection has not been retrieved
             
             //prompt for the selection
-            System.out.println("Main Menu Selection:");
+            System.out.println("Armor Menu Selection:");
             
             //get the name from the keyboard and trim off the blanks
             selection = keyboard.nextLine();
@@ -69,14 +66,11 @@ public class MainMenuView {
     private void doAction(char selection) {
 
         switch (selection){
-            case 'B': // Begin game
-                this.startNewGame();
+            case 'A': // Begin game
+                this.addArmorMenu();
                 break;
-            case 'H': // Help
-                this.displayHelpMenu();
-                break;
-            case 'S': //Save
-                this.saveGame();
+            case 'C': // Help
+                this.checkArmor();
                 break;
             case 'E': // Exit
                 return;
@@ -86,20 +80,16 @@ public class MainMenuView {
         }
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(TreeOfLife.getPlayer());
+    private void addArmorMenu() {
+        InventoryControl.addArmorItem(TreeOfLife.getArmorItem());
         
         //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        AddArmorMenu addArmorMenu = new AddArmorMenu();
+        addArmorMenu.displayMenu();
     }
 
-    private void displayHelpMenu() {
-        System.out.println(HelpMenuView.HELP);
-    }
-
-    private void saveGame() {
-       System.out.println("*** startExistingGame function called ***");
+    private void checkArmor() {
+        
     }
     
 }
