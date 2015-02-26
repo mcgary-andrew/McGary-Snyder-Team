@@ -95,7 +95,8 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println(HelpMenuView.HELP);
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenu();
     }
 
     private void saveGame() {

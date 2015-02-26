@@ -10,6 +10,9 @@ package byui.cit260.TreeOfLife.view;
  * @author Andrew
  */
 public class HelpMenuView {
+    public void displayHelpMenu(){
+        System.out.println(HELP);
+    }
     
     public static final String HELP = "\n"
             + "\n-----------------------------------------"

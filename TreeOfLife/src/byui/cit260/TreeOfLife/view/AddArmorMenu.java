@@ -5,7 +5,12 @@
  */
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.model.ArmorItem;
+import byui.cit260.TreeOfLife.model.ArmorPiece;
+import byui.cit260.TreeOfLife.model.Player;
 import java.util.Scanner;
+import treeoflife.TreeOfLife;
+import static treeoflife.TreeOfLife.player;
 
 /**
  *
@@ -81,10 +86,6 @@ public class AddArmorMenu {
         }
     }
 
-    private void addSofF() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private void addSofG() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -93,6 +94,8 @@ public class AddArmorMenu {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-    
+    private void addSofF() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

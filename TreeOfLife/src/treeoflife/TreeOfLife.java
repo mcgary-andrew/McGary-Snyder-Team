@@ -42,9 +42,9 @@ public class TreeOfLife {
     public static void setArmorItem(ArmorItem armorItem) {
         TreeOfLife.armorItem = armorItem;
     }
-    private static Player player = null;
+    public static Player player = null;
     
-    private static ArmorItem armorItem = null;
+    public static ArmorItem armorItem = null;
     
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();

@@ -11,10 +11,10 @@ import java.util.Objects;
 public class Player implements Serializable{
     
     //class instance variables
-    private String PlayerName;
-    private int Obedience;
-    private int Faith;
-    private int Knowledge;
+    public String PlayerName;
+    public int Obedience;
+    public int Faith;
+    public int Knowledge;
 
     public Player() {
     }
