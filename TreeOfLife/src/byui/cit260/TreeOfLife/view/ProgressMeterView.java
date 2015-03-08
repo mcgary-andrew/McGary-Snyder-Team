@@ -14,7 +14,18 @@ import java.util.Scanner;
 public class ProgressMeterView extends View {
 
 
-    public String characterLevels = "";    
+    public String characterLevels = "";
+    
+    public String viewArmorObtained(){
+    String armorObtained = "";
+    return armorObtained; 
+    }
+    
+    public String viewCharacterLevels(){
+        String characterLevels = "";
+        return characterLevels; 
+    }
+    
     public ProgressMeterView(){
     super("\n"
             + "\n-----------------------------------------"
@@ -45,14 +56,6 @@ public class ProgressMeterView extends View {
         }
     }
     
-    private String viewArmorObtained(){
-        String armorObtained = "";
-        return armorObtained; 
-    }
-    
-    private String viewCharacterLevels(){
-        String characterLevels = "";
-        return characterLevels; 
-    }
+
     
 }
