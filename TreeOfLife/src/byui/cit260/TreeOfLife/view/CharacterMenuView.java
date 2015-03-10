@@ -12,8 +12,9 @@ import java.util.Scanner;
  *
  * @author Krystal
  */
-public class CharacterMenuView {
-    private final String MENU = "\n"
+public class CharacterMenuView extends View {
+    public CharacterMenuView(){
+        super("\n"
             + "\n-----------------------------------------"
             + "\n| Select Your Character"
             + "\n-----------------------------------------"
@@ -21,48 +22,16 @@ public class CharacterMenuView {
             + "\nN - Nephi"
             + "\nS - Sam"
             + "\nE - Exit"
-            + "\n-----------------------------------------";
-    
-    public void displayMenu() {
-        char selection = ' ';
-        do{
-            System.out.println(MENU);
-            String input = this.getInput();
-            selection = input.charAt(0);
-
-            this.doAction(selection);
-
-        } 
-        while (selection != 'E');
+            + "\n-----------------------------------------");
     }
     
-    private String getInput() {
-        boolean valid = false; // indicates if the selection has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){//while a valid selection has not been retrieved
-            
-            //prompt for the selection
-            System.out.println("Select Your Character:");
-            
-            //get the name from the keyboard and trim off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            //if the name is invalid (less than two characters in length))
-            if (selection.length() > 1){
-                System.out.println("Invalid selection");
-                continue; //and repeats again
-                }
-            break; //out of the (exit) the repetition
-        }
-        
-        return selection; // return the character name
-    }
     
-    private void doAction(char selection) {
-        switch (selection){
+ @Override
+    public void doAction(Object obj) {
+        
+        char value = (char) obj;
+        
+        switch (value){
             case 'L': // Laman
                 this.createNewCharacter('L');
                 break;
@@ -105,7 +74,7 @@ public class CharacterMenuView {
         }
         else{
             System.out.println("\n*** Invalid Selection ***");
-            displayMenu();
+            display();
         }
     }
 }

@@ -16,8 +16,9 @@ import static treeoflife.TreeOfLife.player;
  *
  * @author Andrew
  */
-public class AddArmorMenu {
-    public static final String MENU = "\n"
+public class AddArmorMenu extends View {
+    public AddArmorMenu() { 
+            super("\n"
             + "\n-----------------------------------------"
             + "\n| Add Armor Menu"
             + "\n-----------------------------------------"
@@ -25,50 +26,16 @@ public class AddArmorMenu {
             + "\nS - Add Sword of God"
             + "\nR - Add Breastplate of Righteousness"
             + "\nE - Exit"
-            + "\n-----------------------------------------";
-    
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //display the main menu
-            
-            String input = this.getInput();//get the user's selection
-            selection = input.charAt(0);//get the first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-            }while (selection != 'E'); // a selection is not "Exit"
-    }
+            + "\n-----------------------------------------");
+            }
+   
 
-    private String getInput() {
-        boolean valid = false; // indicates if the selection has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in);
+    @Override
+    public void doAction(Object obj) {
         
-        while(!valid){//while a valid selection has not been retrieved
-            
-            //prompt for the selection
-            System.out.println("Add Armor Selection:");
-            
-            //get the name from the keyboard and trim off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            //if the name is invalid (less than two characters in length))
-            if (selection.length() > 1){
-                System.out.println("Invalid selection");
-                continue; //and repeats again
-                }
-            break; //out of the (exit) the repetition
-        }
+        char value = (char) obj;
         
-        return selection; // return the name
-    }
-
-    private void doAction(char selection) {
-
-        switch (selection){
+        switch (value){
             case 'F': // Begin game
                 this.addSofF();
                 break;
