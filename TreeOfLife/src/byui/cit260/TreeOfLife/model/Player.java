@@ -8,92 +8,47 @@ import java.util.Objects;
  *
  * @author Andrew
  */
-public class Player implements Serializable{
+public enum Player implements Serializable{
+    
+    Lehi("He is the Prophet and leader of the family."),
+    Nephi("Faithful son and later the prophet leader of the Nephites."),
+    Sam("The youngest boy and faithful brother of Nephi.");
     
     //class instance variables
-    public String PlayerName;
-    public int Obedience;
-    public int Faith;
-    public int Knowledge;
+    public final String PlayerName;
+    private final String description;
+    private final Point coordinates;
 
-    public Player() {
+    private Player(String description) {
+    this.description = description;
+    coordinates = new Point(1,1);
+    PlayerName = new String();
+    }
+    public static Player getLehi() {
+        return Lehi;
+    }
+
+    public static Player getNephi() {
+        return Nephi;
+    }
+
+    public static Player getSam() {
+        return Sam;
+    }
+    public String getDescription() {
+        return description;
     }
     
-    
+    public Point getCoordinates() {
+        return coordinates;
+    }
 
     public String getPlayerName() {
         return PlayerName;
     }
 
-    public void setPlayerName(String PlayerName) {
-        this.PlayerName = PlayerName;
-    }
-
-    public int getObedience() {
-        return Obedience;
-    }
-
-    public void setObedience(int Obedience) {
-        this.Obedience = Obedience;
-    }
-
-    public int getFaith() {
-        return Faith;
-    }
-
-    public void setFaith(int Faith) {
-        this.Faith = Faith;
-    }
-
-    public int getKnowledge() {
-        return Knowledge;
-    }
-
-    public void setKnowledge(int Knowledge) {
-        this.Knowledge = Knowledge;
-    }
-
     @Override
     public String toString() {
-        return "Player{" + "PlayerName=" + PlayerName + ", Obedience=" + Obedience + ", Faith=" + Faith + ", Knowledge=" + Knowledge + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.PlayerName);
-        hash = 29 * hash + Objects.hashCode(this.Obedience);
-        hash = 29 * hash + Objects.hashCode(this.Faith);
-        hash = 29 * hash + Objects.hashCode(this.Knowledge);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Player other = (Player) obj;
-        if (!Objects.equals(this.PlayerName, other.PlayerName)) {
-            return false;
-        }
-        if (!Objects.equals(this.Obedience, other.Obedience)) {
-            return false;
-        }
-        if (!Objects.equals(this.Faith, other.Faith)) {
-            return false;
-        }
-        if (!Objects.equals(this.Knowledge, other.Knowledge)) {
-            return false;
-        }
-        return true;
-    }
-
-    
-    
-    
-    
+        return "Player{" + "PlayerName=" + PlayerName + "description=" + description + "coordinates=" + coordinates + '}';
+    }   
 }

@@ -5,7 +5,7 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.model.GameCharacter;
+import byui.cit260.TreeOfLife.model.CharacterAttributes;
 import java.util.Scanner;
 
 /**
@@ -51,7 +51,7 @@ public class CharacterMenuView extends View {
     
     private void createNewCharacter(char name){
         //create a new character
-        GameCharacter selectedCharacter = new GameCharacter();
+        CharacterAttributes selectedCharacter = new CharacterAttributes();
         
         //set the character attributes
         if (name=='L'){
