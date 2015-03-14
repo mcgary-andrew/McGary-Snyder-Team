@@ -16,12 +16,7 @@ public class ArmorItem implements Serializable{
     private int ArmorCost;
 
 
-    public ArmorItem() {
-    }
-    
-    
-
-    public int getArmorAbility() {
+     public int getArmorAbility() {
         return ArmorAbility;
     }
 

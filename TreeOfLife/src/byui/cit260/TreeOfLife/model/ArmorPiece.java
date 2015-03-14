@@ -30,6 +30,31 @@ public enum ArmorPiece implements Serializable{
         this.KnowledgeRequired = knowledge;
         }
     
+    public static ArmorPiece[] createArmorPieceList() {
+        ArmorPiece[] armor =
+                new ArmorPiece[2];
+        
+        ArmorPiece SofG = new ArmorPiece();
+        SofG.setDescription("Sword of God");
+        SofG.setQuantityInStock(0);
+        SofG.setRequriedAmount(0);
+        armor[0] = SofG;
+        
+        ArmorPiece BofR = new ArmorPiece();
+        BofR.setDescription("Breastplate of Righteousness");
+        BofR.setQuantityInStock(0);
+        BofR.setRequriedAmount(0);
+        armor[1] = BofR;
+        
+        ArmorPiece SofF = new ArmorPiece();
+        SofF.setDescription("Sheild of Faith");
+        SofF.setQuantityInStock(0);
+        SofF.setRequriedAmount(0);
+        armor[2] = SofF;
+        
+        return armor;
+    }
+    
     
 
     public String getArmorPieceName() {
@@ -51,5 +76,17 @@ public enum ArmorPiece implements Serializable{
     @Override
     public String toString() {
         return "Player{" + "ArmorPieceName=" + ArmorPieceName + ", ObedienceRequired=" + ObedienceRequired + ", FaithRequired=" + FaithRequired + ", KnowledgeRequired=" + KnowledgeRequired + '}';
+    }
+
+    private void setDescription(String sword_of_God) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setQuantityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setRequriedAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
