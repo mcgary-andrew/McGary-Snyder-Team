@@ -52,4 +52,16 @@ public enum ArmorPiece implements Serializable{
     public String toString() {
         return "Player{" + "ArmorPieceName=" + ArmorPieceName + ", ObedienceRequired=" + ObedienceRequired + ", FaithRequired=" + FaithRequired + ", KnowledgeRequired=" + KnowledgeRequired + '}';
     }
+
+    public void setDescription(String sword_of_God) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setQuantityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRequriedAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

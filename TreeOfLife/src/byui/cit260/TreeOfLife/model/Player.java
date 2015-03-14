@@ -10,6 +10,8 @@ import java.util.Objects;
  */
 public enum Player implements Serializable{
     
+       
+    
     Lehi("He is the Prophet and leader of the family."),
     Nephi("Faithful son and later the prophet leader of the Nephites."),
     Sam("The youngest boy and faithful brother of Nephi.");
@@ -18,6 +20,16 @@ public enum Player implements Serializable{
     public final String PlayerName;
     private final String description;
     private final Point coordinates;
+    
+    private ArmorPiece[] armor;
+
+    public ArmorPiece[] getarmor() {
+        return armor;
+    }
+
+    public void setarmor(ArmorPiece[] armor) {
+        this.armor = armor;
+    }
 
     private Player(String description) {
     this.description = description;
