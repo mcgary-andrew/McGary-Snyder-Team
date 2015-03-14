@@ -5,11 +5,30 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.model.Location;
+import byui.cit260.TreeOfLife.model.Scene;
+
 /**
  *
  * @author Andrew
  */
 public class MapControl {
+
+    public static Location createMap() {
+        Location location = new Location(20, 20);
+               
+        //create a List of the different scenes in the game
+        Scene[] scenes = createScenes();
+        
+        //assign the differen scenes to locations in the map
+        assignScenesToLocations(map, scenes);
+        
+        return map;        
+    }
+
+    private static Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    public double calcAverageAttributes(double faithValue, double obedienceValue, double knowledgeValue){
        if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){
 	return -999;
