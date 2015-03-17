@@ -20,7 +20,6 @@ public enum Player implements Serializable{
     public final String PlayerName;
     private final String description;
     private final Point coordinates;
-    
     private ArmorPiece[] armor;
 
     public ArmorPiece[] getarmor() {

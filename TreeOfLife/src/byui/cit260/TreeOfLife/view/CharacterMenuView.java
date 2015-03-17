@@ -5,7 +5,7 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.model.CharacterAttributes;
+import byui.cit260.TreeOfLife.model.Character;
 import java.util.Scanner;
 
 /**
@@ -18,7 +18,7 @@ public class CharacterMenuView extends View {
             + "\n-----------------------------------------"
             + "\n| Select Your Character"
             + "\n-----------------------------------------"
-            + "\nL - Laman"
+            + "\nL - Lehi"
             + "\nN - Nephi"
             + "\nS - Sam"
             + "\nE - Exit"
@@ -51,23 +51,23 @@ public class CharacterMenuView extends View {
     
     private void createNewCharacter(char name){
         //create a new character
-        CharacterAttributes selectedCharacter = new CharacterAttributes();
+        Character selectedCharacter = new Character();
         
         //set the character attributes
         if (name=='L'){
-            selectedCharacter.setName("Laman");
+            selectedCharacter.setCharacterName("Lehi");
             selectedCharacter.setFaith(0);
             selectedCharacter.setObedience(0);
             selectedCharacter.setKnowledge(15);
         }
         else if (name=='S'){
-            selectedCharacter.setName("Sam");
+            selectedCharacter.setCharacterName("Sam");
             selectedCharacter.setFaith(5);
             selectedCharacter.setObedience(10);
             selectedCharacter.setKnowledge(0);
         }
         else if (name=='N'){
-            selectedCharacter.setName("Nephi");
+            selectedCharacter.setCharacterName("Nephi");
             selectedCharacter.setFaith(5);
             selectedCharacter.setObedience(5);
             selectedCharacter.setKnowledge(5);

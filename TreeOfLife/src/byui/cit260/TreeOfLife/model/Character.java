@@ -12,12 +12,19 @@ import java.util.Objects;
  *
  * @author Krystal
  */
-public class CharacterAttributes implements Serializable {
+public class Character implements Serializable {
 
-    private int faith;
-    private int obedience;
-    private int knowledge;
+    public String characterName;
+    public int faith;
+    public int obedience;
+    public int knowledge;
     
+    public String getCharacterName() {
+        return characterName;
+    }
+    public void setCharacterName(String CharacterName) {
+        this.characterName = CharacterName;
+    }
     public int getFaith() {
         return faith;
     }
@@ -47,7 +54,7 @@ public class CharacterAttributes implements Serializable {
 
     @Override
     public String toString() {
-        return "CharacterAttributes{" + ", faith=" + faith + ", obedience=" + obedience + ", knowledge=" + knowledge + '}';
+        return "CharacterAttributes{ CharacterName" + characterName +  ", faith=" + faith + ", obedience=" + obedience + ", knowledge=" + knowledge + '}';
     }
 
     @Override
@@ -67,7 +74,7 @@ public class CharacterAttributes implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CharacterAttributes other = (CharacterAttributes) obj;
+        final Character other = (Character) obj;
         if (this.faith != other.faith) {
             return false;
         }

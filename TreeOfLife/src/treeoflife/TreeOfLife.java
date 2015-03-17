@@ -55,20 +55,20 @@ public class TreeOfLife {
         Player playerTwo = new Player();
         Player playerThree = new Player();
         
-        playerOne.setPlayerName("Lehi");
-        playerOne.setKnowledge(100);
-        playerOne.setObedience(100);
-        playerOne.setFaith(100);
-        
-        playerTwo.setPlayerName("Nehpi");
-        playerTwo.setObedience(80);
-        playerTwo.setKnowledge(50);
-        playerTwo.setFaith(100);
-        
-        playerThree.setPlayerName("Sam");
-        playerThree.setObedience(50);
-        playerThree.setKnowledge(20);
-        playerThree.setFaith(30);
+//        playerOne.setPlayerName("Lehi");
+//        playerOne.setKnowledge(100);
+//        playerOne.setObedience(100);
+//        playerOne.setFaith(100);
+//        
+//        playerTwo.setPlayerName("Nehpi");
+//        playerTwo.setObedience(80);
+//        playerTwo.setKnowledge(50);
+//        playerTwo.setFaith(100);
+//        
+//        playerThree.setPlayerName("Sam");
+//        playerThree.setObedience(50);
+//        playerThree.setKnowledge(20);
+//        playerThree.setFaith(30);
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);

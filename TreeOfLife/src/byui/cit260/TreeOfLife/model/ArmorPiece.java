@@ -15,10 +15,10 @@ public enum ArmorPiece implements Serializable{
     Obedience("Breastplate of Righteousness");
     
     //class instance variables
-    private final String ArmorPieceName;
-    private final int ObedienceRequired;
-    private final int FaithRequired;
-    private final int KnowledgeRequired;
+    public final String ArmorPieceName;
+    public final int ObedienceRequired;
+    public final int FaithRequired;
+    public final int KnowledgeRequired;
 
     ArmorPiece(String ArmorPieceName){
         this.ArmorPieceName = ArmorPieceName;
@@ -31,10 +31,9 @@ public enum ArmorPiece implements Serializable{
         }
     
     public static ArmorPiece[] createArmorPieceList() {
-        ArmorPiece[] armor =
-                new ArmorPiece[2];
+        ArmorPiece[] armor = new ArmorPiece[2];
         
-        ArmorPiece SofG = new ArmorPiece();
+        ArmorPiece[] SofG = new ArmorPiece[2];
         SofG.setDescription("Sword of God");
         SofG.setQuantityInStock(0);
         SofG.setRequriedAmount(0);

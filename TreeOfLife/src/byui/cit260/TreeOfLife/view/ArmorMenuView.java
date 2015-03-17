@@ -55,8 +55,6 @@ public class ArmorMenuView extends View {
     }
 
     private void checkArmor() {
-        Faith faith = faith;
-        if()
     }
     
 }

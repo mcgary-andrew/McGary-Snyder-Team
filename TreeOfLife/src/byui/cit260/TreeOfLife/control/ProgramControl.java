@@ -14,13 +14,13 @@ import treeoflife.TreeOfLife;
  */
 public class ProgramControl {
 
-    public static Player createPlayer(String playersName) {
-        if (playersName == null){
+    public static Player createPlayer(String Player) {
+        if (Player == null){
             return null;
         }
         
         Player player = new Player();
-        player.setPlayerName(playersName);
+        playerName.getPlayerName(playerName);
         
         TreeOfLife.setPlayer(player);
         

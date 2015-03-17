@@ -21,9 +21,9 @@ public class MapControl {
         Scene[] scenes = createScenes();
         
         //assign the differen scenes to locations in the map
-        assignScenesToLocations(map, scenes);
+        assignScenesToLocation(location, scenes);
         
-        return map;        
+        return location;        
     }
 
     private static Scene[] createScenes() {
@@ -41,19 +41,7 @@ public class MapControl {
            double valueAverage = valueTotal / 3;
            return valueAverage;
        }
-   }
-   public double calcArmorStatusValue(double hOfSValue, double sOfFValue, double sWOfGValue, double bOfRValue){
-       if (hOfSValue > 100 || sOfFValue > 100 || sWOfGValue > 100 || bOfRValue > 100){
-	return -999;
-       }
-       if (hOfSValue < 0 || sOfFValue < 0 || sWOfGValue < 0 || bOfRValue < 0){
-	return -999;
-       }
-       else {
-           double valueTotal = hOfSValue + sOfFValue + sWOfGValue + bOfRValue;
-           double valueAverage = valueTotal / 4;
-           return valueAverage;
-       }
+   
    }
     public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double hOfSValue, double sOfFValue, double sWOfGValue, double bOfRValue){
         if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){

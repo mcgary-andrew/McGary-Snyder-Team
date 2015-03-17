@@ -13,8 +13,17 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
         private double totalTime;
-        private Player chosenPlayer;
+        private Player Player;
         private Location location;
+        private CharacterAttributes Attributes;
+
+    public CharacterAttributes getAttributes() {
+        return Attributes;
+    }
+
+    public void setAttributes(CharacterAttributes Attributes) {
+        this.Attributes = Attributes;
+    }
 
     public Location getLocation() {
         return location;
@@ -33,12 +42,12 @@ public class Game implements Serializable {
         this.totalTime = totalTime;
     }
 
-    public Player getChosenPlayer() {
-        return chosenPlayer;
+    public Player getPlayer() {
+        return Player;
     }
 
-    public void setChosenPlayer(Player chosenPlayer) {
-        this.chosenPlayer = chosenPlayer;
+    public void setPlayer(Player Player) {
+        this.Player = Player;
     }
         
         
