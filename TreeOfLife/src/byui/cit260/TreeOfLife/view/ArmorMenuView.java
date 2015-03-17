@@ -6,6 +6,7 @@
 package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.InventoryControl;
+import static byui.cit260.TreeOfLife.model.ArmorPiece.Faith;
 import java.util.Scanner;
 import treeoflife.TreeOfLife;
 
@@ -54,7 +55,8 @@ public class ArmorMenuView extends View {
     }
 
     private void checkArmor() {
-        
+        Faith faith = faith;
+        if()
     }
     
 }

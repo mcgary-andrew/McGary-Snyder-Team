@@ -78,15 +78,15 @@ public enum ArmorPiece implements Serializable{
         return "Player{" + "ArmorPieceName=" + ArmorPieceName + ", ObedienceRequired=" + ObedienceRequired + ", FaithRequired=" + FaithRequired + ", KnowledgeRequired=" + KnowledgeRequired + '}';
     }
 
-    private void setDescription(String sword_of_God) {
+    public void setDescription(String sword_of_God) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void setQuantityInStock(int i) {
+    public void setQuantityInStock(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void setRequriedAmount(int i) {
+    public void setRequriedAmount(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

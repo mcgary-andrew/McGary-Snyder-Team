@@ -17,6 +17,9 @@ public class Scene implements Serializable{
     private double armorRequiredToPass;
     private boolean visited;
     private int answeredCorrectlyQuestions;
+    private Scene scene;
+    private ArrayList<Player> players;
+    
 
     public Scene() {
     }  

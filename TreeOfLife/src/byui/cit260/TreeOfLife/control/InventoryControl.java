@@ -17,5 +17,9 @@ public class InventoryControl {
         System.out.println("\n*** addArmorItem stub function called ***");
     }
 
-    
+    public static void checkArmorAverage(ArmorAverage armorAverage){
+        checkArmor(faith, obedience, knowledge){
+        if 
+    }
+    }
 }
