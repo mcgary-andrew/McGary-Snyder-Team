@@ -107,7 +107,6 @@ public class MapControlTest {
         System.out.println("\tTest case #1");
         
         // input values for test case 1
-        double hOfSValue = 100;
         double sOfFValue = 100;
         double sWOfGValue = 100;
         double bOfRValue = 100;
@@ -118,10 +117,10 @@ public class MapControlTest {
         MapControl instance = new MapControl();
         
         //call function to run test
-        //double result = instance.calcArmorStatusValue(double hOfSValue, double sOfFValue, double sWOfGValue, double bOfRValue);
+        double result = instance.calcArmorStatusValue(sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
-        //assertEquals(expResult, result, 0.01);
+        assertEquals(expResult, result, 0.01);
         
         /*****************
          * Test Case #2
@@ -129,7 +128,6 @@ public class MapControlTest {
         System.out.println("\tTest case #2");
         
         // input values for test case 2
-        hOfSValue = 0;
         sOfFValue = 100;
         sWOfGValue = 0;
         bOfRValue = 0;
@@ -137,7 +135,7 @@ public class MapControlTest {
         expResult = -999; //expected output returned value
         
         //call function to run test
-        result = instance.calcArmorStatusValue(hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        result = instance.calcArmorStatusValue(sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
@@ -148,7 +146,6 @@ public class MapControlTest {
         System.out.println("\tTest case #3");
         
         // input values for test case 3
-        hOfSValue = 0;
         sOfFValue = 0;
         sWOfGValue = 100;
         bOfRValue = 0;
@@ -156,7 +153,7 @@ public class MapControlTest {
         expResult = -999; //expected output returned value
         
         //call function to run test
-        result = instance.calcArmorStatusValue(hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        result = instance.calcArmorStatusValue(sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
@@ -167,7 +164,6 @@ public class MapControlTest {
         System.out.println("\tTest case #4");
         
         // input values for test case 4
-        hOfSValue = 0;
         sOfFValue = 0;
         sWOfGValue = 0;
         bOfRValue = 100;
@@ -175,7 +171,7 @@ public class MapControlTest {
         expResult = -999; //expected output returned value
         
         //call function to run test
-        result = instance.calcArmorStatusValue(hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        result = instance.calcArmorStatusValue(sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
@@ -196,7 +192,6 @@ public class MapControlTest {
         double faithValue = 100.0;
         double obedienceValue = 60.0;
         double knowledgeValue = 70.0;
-        double hOfSValue = 1.0;
         double sOfFValue = 0.0;
         double sWOfGValue = 1.0;
         double bOfRValue = 0.0;
@@ -207,10 +202,10 @@ public class MapControlTest {
         MapControl instance = new MapControl();
         
         // call function to run test
-        double result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        double result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.00001);
+        assertEquals(expResult, result, 0.1);
         
         /*****************
         * Test Case #2
@@ -221,7 +216,6 @@ public class MapControlTest {
         faithValue = -20.0;
         obedienceValue = 40.0;
         knowledgeValue = 80.0;
-        hOfSValue = 1.0;
         sOfFValue = 1.0;
         sWOfGValue = 1.0;
         bOfRValue = 1.0;
@@ -229,7 +223,7 @@ public class MapControlTest {
         expResult = -999;
               
         // call function to run test
-        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.00001);
@@ -243,7 +237,6 @@ public class MapControlTest {
         faithValue = 153.0;
         obedienceValue = 74.0;
         knowledgeValue = 50.0;
-        hOfSValue = 1.0;
         sOfFValue = 0.0;
         sWOfGValue = 0.0;
         bOfRValue = 0.0;
@@ -251,7 +244,7 @@ public class MapControlTest {
         expResult = -999;
               
         // call function to run test
-        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.00001);
@@ -265,18 +258,17 @@ public class MapControlTest {
         faithValue = 90.0;
         obedienceValue = 60.0;
         knowledgeValue = 45.0;
-        hOfSValue = -1.0;
-        sOfFValue = 1.0;
+        sOfFValue = -1.0;
         sWOfGValue = 1.0;
         bOfRValue = 1.0;
         
         expResult = -999;
               
         // call function to run test
-        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.00001);
+        assertEquals(expResult, result, 0.1);
         
         /*****************
         * Test Case #5
@@ -287,15 +279,14 @@ public class MapControlTest {
         faithValue = 100.0;
         obedienceValue = 74.0;
         knowledgeValue = 50.0;
-        hOfSValue = 2.0;
-        sOfFValue = 1.0;
+        sOfFValue = -1.0;
         sWOfGValue = 1.0;
         bOfRValue = 1.0;
         
         expResult = -999;
               
         // call function to run test
-        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, hOfSValue, sOfFValue, sWOfGValue, bOfRValue);
+        result = instance.calcEndLevel(faithValue, obedienceValue, knowledgeValue, sOfFValue, sWOfGValue, bOfRValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.00001);

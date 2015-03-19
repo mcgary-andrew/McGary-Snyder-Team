@@ -54,24 +54,37 @@ public class MapControl {
        }
    
    }
-    public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double hOfSValue, double sOfFValue, double sWOfGValue, double bOfRValue){
+   public double calcArmorStatusValue(double faith, double obedience, double knowledge){
+       if (faith > 100 || obedience > 100 || knowledge > 100){
+	return -999;
+       }
+       if (faith < 0 || obedience < 0 || knowledge < 0){
+	return -999;
+       }
+       else {
+           double valueTotal = faith + obedience + knowledge;
+           double valueAverage = valueTotal / 3;
+           return valueAverage;
+       }
+   }
+    public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double sOfFValue, double sWOfGValue, double bOfRValue){
         if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){
             return -999;
         }
         if (faithValue < 0 || obedienceValue < 0 || knowledgeValue < 0){
             return -999;
         }
-        if (hOfSValue > 1 || sOfFValue > 1 || sWOfGValue > 1 || bOfRValue > 1){
+        if (sOfFValue > 1 || sWOfGValue > 1 || bOfRValue > 1){
             return -999;
         }
-        if (hOfSValue < 0 || sOfFValue < 0 || sWOfGValue < 0 || bOfRValue < 0){
+        if (sOfFValue < 0 || sWOfGValue < 0 || bOfRValue < 0){
             return -999;
         }
         else{
             double valueTotal = faithValue + obedienceValue + knowledgeValue;
             double valueAverage = valueTotal / 300;
-            double armorTotal = hOfSValue + sOfFValue + sWOfGValue + bOfRValue;
-            double armorAverage = armorTotal / 4;
+            double armorTotal = sOfFValue + sWOfGValue + bOfRValue;
+            double armorAverage = armorTotal / 3;
             double totalAverage = (valueAverage + armorAverage)/2;
             return totalAverage;
         }  

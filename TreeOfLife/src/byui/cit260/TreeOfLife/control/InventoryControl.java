@@ -6,7 +6,6 @@
 package byui.cit260.TreeOfLife.control;
 
 import byui.cit260.TreeOfLife.model.ArmorItem;
-import byui.cit260.TreeOfLife.model.ArmorPiece;
 
 /**
  *
@@ -17,17 +16,4 @@ public class InventoryControl {
         System.out.println("\n*** addArmorItem stub function called ***");
     }
 
-    public double calcArmorStatusValue(double faith, double obedience, double knowledge){
-       if (faith > 100 || obedience > 100 || knowledge > 100){
-	return -999;
-       }
-       if (faith < 0 || obedience < 0 || knowledge < 0){
-	return -999;
-       }
-       else {
-           double valueTotal = faith + obedience + knowledge;
-           double valueAverage = valueTotal / 3;
-           return valueAverage;
-       }
-    }
 }
