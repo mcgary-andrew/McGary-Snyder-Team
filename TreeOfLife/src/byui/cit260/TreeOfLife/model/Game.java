@@ -13,24 +13,25 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
         private double totalTime;
-        private Player Player;
-        private Location location;
-        private CharacterAttributes Attributes;
+        private Actors player;
+        private Location[][] locations;
+        private ArmorPiece[] armorPieces; 
 
-    public CharacterAttributes getAttributes() {
-        return Attributes;
+    public ArmorPiece[] getArmorPieces() {
+        return armorPieces;
     }
 
-    public void setAttributes(CharacterAttributes Attributes) {
-        this.Attributes = Attributes;
+    public void setArmorPieces(ArmorPiece[] armorPieces) {
+        this.armorPieces = armorPieces;
     }
 
-    public Location getLocation() {
-        return location;
+
+    public Location[][] getLocation() {
+        return locations;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setLocation(Location[][] location) {
+        this.locations = location;
     }
 
      
@@ -42,12 +43,12 @@ public class Game implements Serializable {
         this.totalTime = totalTime;
     }
 
-    public Player getPlayer() {
-        return Player;
+    public Actors getPlayer() {
+        return player;
     }
 
-    public void setPlayer(Player Player) {
-        this.Player = Player;
+    public void setPlayer(Actors Player) {
+        this.player = Player;
     }
         
         

@@ -5,7 +5,7 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.model.Character;
+import byui.cit260.TreeOfLife.model.Actors;
 import java.util.Scanner;
 
 /**
@@ -32,14 +32,14 @@ public class CharacterMenuView extends View {
         char value = (char) obj;
         
         switch (value){
-            case 'L': // Laman
-                this.createNewCharacter('L');
+            case 'L': // Lehi
+                this.createLehi('L');
                 break;
             case 'S': // Sam
-                this.createNewCharacter('S');
+                this.createSam('S');
                 break;
             case 'N': //Nephi
-                this.createNewCharacter('N');
+                this.createNephi('N');
                 break;
             case 'E': // Exit
                 return;
@@ -47,34 +47,20 @@ public class CharacterMenuView extends View {
                 System.out.println("\n*** Invalid Selection ***");
                 break;
         }
-    }
-    
-    private void createNewCharacter(char name){
-        //create a new character
-        Character selectedCharacter = new Character();
         
-        //set the character attributes
-        if (name=='L'){
-            selectedCharacter.setCharacterName("Lehi");
-            selectedCharacter.setFaith(0);
-            selectedCharacter.setObedience(0);
-            selectedCharacter.setKnowledge(15);
-        }
-        else if (name=='S'){
-            selectedCharacter.setCharacterName("Sam");
-            selectedCharacter.setFaith(5);
-            selectedCharacter.setObedience(10);
-            selectedCharacter.setKnowledge(0);
-        }
-        else if (name=='N'){
-            selectedCharacter.setCharacterName("Nephi");
-            selectedCharacter.setFaith(5);
-            selectedCharacter.setObedience(5);
-            selectedCharacter.setKnowledge(5);
-        }
-        else{
-            System.out.println("\n*** Invalid Selection ***");
-            display();
-        }
-    }          
+        
+    } 
+
+    private void createLehi(char c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void createNephi(char c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void createSam(char c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

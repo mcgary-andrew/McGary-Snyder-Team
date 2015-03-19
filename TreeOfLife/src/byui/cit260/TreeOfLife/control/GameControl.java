@@ -8,7 +8,7 @@ package byui.cit260.TreeOfLife.control;
 import byui.cit260.TreeOfLife.model.ArmorPiece;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
-import byui.cit260.TreeOfLife.model.Player;
+import byui.cit260.TreeOfLife.model.Actors;
 import treeoflife.TreeOfLife;
 
 /**
@@ -17,20 +17,20 @@ import treeoflife.TreeOfLife;
  */
 public class GameControl {
     
-    public static void createNewGame(Player player){
+    public static void createNewGame(Actors player){
         Game game = new Game(); //create new game
         TreeOfLife.setCurrentGame(game); //save in TreeOfLife
         
         game.setPlayer(player); //save player in game
         
         //create the inventory list and save in the game
-        ArmorPiece[] armorPiece = InventoryControl.createArmorPiece();
-        game.setArmorPiece(ArmorPiece);
+        ArmorPiece[] armorPieces = new ArmorPiece[3];
+        game.setArmorPieces(armorPieces);
         
-        Location location = MapControl.createMap();
-        game.setLocation(location); //save map in game
+        Location[][] locations = MapControl.createMap();
+        game.setLocation(locations); //save map in game
         
         //move players to starting position in the map
-        MapControl.movePlayersToStartLocation(location);
+        MapControl.movePlayersToStartLocation(locations[1][1]);
     }
 }

@@ -21,10 +21,10 @@ public class StartProgramView {
         this.displayBanner();
         
         //prompt the player to enter their name
-        String playersName = this.getPlayersName();
+        String name = getPlayersName();
         
         //Creat and Save the player object
-        Player player = ProgramControl.createPlayer(playersName);
+        Player player = ProgramControl.createPlayer(name);
         
         // Display a personalized welcome message
         this.displayWelcomeMessage(player);
@@ -91,7 +91,7 @@ public class StartProgramView {
 
     private void displayWelcomeMessage(Player player) {
         System.out.println("\n\n====================================");
-        System.out.println("\tWelcome to the game " + player.getPlayerName() + "!");
+        System.out.println("\tWelcome to the game " + player.getName() + "!");
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("======================================");
         

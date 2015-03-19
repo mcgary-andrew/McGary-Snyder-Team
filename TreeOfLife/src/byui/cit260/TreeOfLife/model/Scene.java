@@ -18,7 +18,23 @@ public class Scene implements Serializable{
     private boolean visited;
     private int answeredCorrectlyQuestions;
     private Scene scene;
-    private ArrayList<Player> players;
+    private Actors actor;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Actors getActor() {
+        return actor;
+    }
+
+    public void setActor(Actors actor) {
+        this.actor = actor;
+    }
     
 
     public Scene() {

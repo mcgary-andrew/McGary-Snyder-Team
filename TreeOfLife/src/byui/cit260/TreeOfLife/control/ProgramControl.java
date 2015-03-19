@@ -5,6 +5,7 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.model.Actors;
 import byui.cit260.TreeOfLife.model.Player;
 import treeoflife.TreeOfLife;
 
@@ -14,13 +15,13 @@ import treeoflife.TreeOfLife;
  */
 public class ProgramControl {
 
-    public static Player createPlayer(String Player) {
-        if (Player == null){
+    public static Player createPlayer(String name) {
+        if (name == null){
             return null;
         }
         
         Player player = new Player();
-        playerName.getPlayerName(playerName);
+        player.setName(name);
         
         TreeOfLife.setPlayer(player);
         

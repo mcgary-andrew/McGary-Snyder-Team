@@ -5,10 +5,6 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.GameControl;
-import java.util.Scanner;
-import treeoflife.TreeOfLife;
-
 
 /**
  *
@@ -52,8 +48,6 @@ public class MainMenuView extends View{
     }
 
     private void startNewGame() {
-        GameControl.createNewGame(TreeOfLife.getPlayer());
-        
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
