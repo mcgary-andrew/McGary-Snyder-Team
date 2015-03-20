@@ -5,8 +5,12 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.exceptions.MapControlException;
+import byui.cit260.TreeOfLife.model.Actors;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Scene;
+import byui.cit260.TreeOfLife.model.Map;
+
 
 /**
  *
@@ -33,52 +37,84 @@ public class MapControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void movePlayersToStartLocation(Location location) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static int movePlayersToStartLocation(Map[][] points) {
+        //for every actor
+        Actors[] actors = Actors.values();
+        
+        for (Actors actor : actors){
+            Map coordinates = actor.getCoordinates();
+            int returnValue = MapControl.moveActorToLocation(actor, coordinates);
+        }
+        return 0;      
+       
     }
 
     private static void assignScenesToLocations(Location[][] locations, Scene[] scenes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   public double calcAverageAttributes(double faithValue, double obedienceValue, double knowledgeValue){
+   public static double calcAverageAttributes(double faithValue, double obedienceValue, double knowledgeValue)
+                    throws MapControlException{
        if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){
-	return -999;
+	throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
+                                        + "One of the above Attributes is greater than 100.");
        }
        if (faithValue < 0 || obedienceValue < 0 || knowledgeValue < 0){
-	return -999;
+	throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
+                                        + "One of the above Attributes is less than 0.");
        }
        else {
            double valueTotal = faithValue + obedienceValue + knowledgeValue;
            double valueAverage = valueTotal / 3;
            return valueAverage;
        }
-   
+       
    }
-   public double calcArmorStatusValue(double faith, double obedience, double knowledge){
-       if (faith > 100 || obedience > 100 || knowledge > 100){
-	return -999;
+
+    private static int moveActorToLocation(Actors actor, Map coordinates) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   public double calcArmorStatusValue(double faithValue, double obedienceValue, double knowledgeValue)
+                    throws MapControlException{
+       if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){
+        throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
+                                        + "One of the above Attributes is greater than 100.");
        }
-       if (faith < 0 || obedience < 0 || knowledge < 0){
-	return -999;
+       if (faithValue < 0 || obedienceValue < 0 || knowledgeValue < 0){
+	throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
+                                        + "One of the above Attributes is less than 0.");
        }
        else {
-           double valueTotal = faith + obedience + knowledge;
+           double valueTotal = faithValue + obedienceValue + knowledgeValue;
            double valueAverage = valueTotal / 3;
            return valueAverage;
        }
    }
-    public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double sOfFValue, double sWOfGValue, double bOfRValue){
+    public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double sOfFValue, double sWOfGValue, double bOfRValue)
+                    throws MapControlException{
         if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){
-            return -999;
+            throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
+                                        + "One of the above Attributes is greater than 100.");
         }
         if (faithValue < 0 || obedienceValue < 0 || knowledgeValue < 0){
-            return -999;
+            throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
+                                        + "One of the above Attributes is less than 0.");
         }
         if (sOfFValue > 1 || sWOfGValue > 1 || bOfRValue > 1){
-            return -999;
+            throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Shield of Faith" + sOfFValue + "," + "Sword of God" + sWOfGValue + "," + "Breastplate of Righteousness"+ bOfRValue
+                                        + "One of the above Armor Items is greater than 1.");
         }
         if (sOfFValue < 0 || sWOfGValue < 0 || bOfRValue < 0){
-            return -999;
+                        throw new MapControlException("Cannot Calculate Average of Attributes "
+                                        + "Shield of Faith" + sOfFValue + "," + "Sword of God" + sWOfGValue + "," + "Breastplate of Righteousness"+ bOfRValue
+                                        + "One of the above Armor Items is less than 0.");
+
         }
         else{
             double valueTotal = faithValue + obedienceValue + knowledgeValue;
