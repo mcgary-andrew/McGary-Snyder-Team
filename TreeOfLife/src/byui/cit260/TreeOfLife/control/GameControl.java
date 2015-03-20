@@ -31,6 +31,6 @@ public class GameControl {
         game.setLocation(locations); //save map in game
         
         //move players to starting position in the map
-        MapControl.movePlayersToStartLocation(locations[1][1]);
+       // MapControl.movePlayersToStartLocation(Locations[1][1]);
     }
 }

@@ -12,8 +12,8 @@ import java.util.Scanner;
  *
  * @author Krystal
  */
-public class CharacterMenuView extends View {
-    public CharacterMenuView(){
+public class ActorMenuView extends View {
+    public ActorMenuView(){
         super("\n"
             + "\n-----------------------------------------"
             + "\n| Select Your Character"
