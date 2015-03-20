@@ -20,7 +20,7 @@ import byui.cit260.TreeOfLife.model.Player;
 public class TreeOfLife {
 
     private static Game currentGame = null;
-    public static Player player;
+    public static Player player = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -51,7 +51,16 @@ public class TreeOfLife {
     
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
+        try {
+        // create StartProgramView and start the game
         startProgramView.startProgram();
+        
+        } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.startProgram();
+        }
+        }
         
 //        
 //        Actors playerOne = new Actors();
@@ -106,4 +115,4 @@ public class TreeOfLife {
 //        armorItemTwo.setArmorCost(5);
         
     } 
-}
+
