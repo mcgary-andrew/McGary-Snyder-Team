@@ -40,7 +40,7 @@ public class MapControl {
     private static void assignScenesToLocations(Location[][] locations, Scene[] scenes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   public double calcAverageAttributes(double faithValue, double obedienceValue, double knowledgeValue){
+   public static double calcAverageAttributes(double faithValue, double obedienceValue, double knowledgeValue){
        if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){
 	return -999;
        }

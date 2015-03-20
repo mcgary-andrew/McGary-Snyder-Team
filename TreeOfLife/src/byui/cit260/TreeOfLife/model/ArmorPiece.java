@@ -16,11 +16,11 @@ public enum ArmorPiece implements Serializable{
     
     //class instance variables
     public final String armorPieceName;
-    public final int obedienceRequired;
-    public final int faithRequired;
-    public final int knowledgeRequired;
+    public final double obedienceRequired;
+    public final double faithRequired;
+    public final double knowledgeRequired;
 
-    ArmorPiece(String armorPieceName, int obedience, int faith, int knowledge){
+    ArmorPiece(String armorPieceName, double obedience, double faith, double knowledge){
         this.armorPieceName = armorPieceName;
         this.obedienceRequired = obedience;
         this.faithRequired = faith;
@@ -31,15 +31,15 @@ public enum ArmorPiece implements Serializable{
         return armorPieceName;
     }
 
-    public int getObedienceRequired() {
+    public double getObedienceRequired() {
         return obedienceRequired;
     }
 
-    public int getFaithRequired() {
+    public double getFaithRequired() {
         return faithRequired;
     }
 
-    public int getKnowledgeRequired() {
+    public double getKnowledgeRequired() {
         return knowledgeRequired;
     }
 

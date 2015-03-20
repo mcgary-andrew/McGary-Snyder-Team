@@ -6,6 +6,8 @@
 package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.InventoryControl;
+import byui.cit260.TreeOfLife.control.MapControl;
+import byui.cit260.TreeOfLife.model.ArmorPiece;
 import static byui.cit260.TreeOfLife.model.ArmorPiece.Faith;
 import java.util.Scanner;
 import treeoflife.TreeOfLife;
@@ -54,7 +56,11 @@ public class ArmorMenuView extends View {
         addArmorMenu.display();
     }
 
-    private void checkArmor() {
+    private void checkArmor(){
+        ArmorPiece faithValue = ArmorPiece.Faith;
+        ArmorPiece obedienceValue = ArmorPiece.Obedience;
+        ArmorPiece knowledgeValue = ArmorPiece.Knowledge;
+        //MapControl.calcAverageAttributes(faithValue, obedienceValue, knowledgeValue);
     }
     
 }
