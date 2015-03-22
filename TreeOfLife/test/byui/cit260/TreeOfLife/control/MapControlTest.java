@@ -5,6 +5,7 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,9 +20,10 @@ public class MapControlTest {
 
     /**
      * Test of calcAverageAttributes method, of class MapControl.
+     * @throws byui.cit260.TreeOfLife.exceptions.MapControlException
      */
     @Test
-    public void testCalcAverageAttributes() {
+    public void testCalcAverageAttributes() throws MapControlException {
         System.out.println("calcAverageAttributes");
         /*****************
          * Test Case #1
@@ -39,7 +41,7 @@ public class MapControlTest {
         MapControl instance = new MapControl();
         
         //call function to run test
-        double result = instance.calcAverageAttributes(faithValue, obedienceValue, knowledgeValue);
+        double result = MapControl.calcAverageAttributes(faithValue, obedienceValue, knowledgeValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
@@ -57,7 +59,7 @@ public class MapControlTest {
         expResult = -999; //expected output returned value
         
         //call function to run test
-        result = instance.calcAverageAttributes(faithValue, obedienceValue, knowledgeValue);
+        result = MapControl.calcAverageAttributes(faithValue, obedienceValue, knowledgeValue);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.01);
@@ -99,7 +101,7 @@ public class MapControlTest {
         assertEquals(expResult, result, 0.01);
         
     }
-    public void testCalcArmorStatusValue() {
+    public void testCalcArmorStatusValue() throws MapControlException {
         System.out.println("calcArmorStatusValue");
         /*****************
          * Test Case #1
@@ -114,7 +116,7 @@ public class MapControlTest {
         double expResult = 100; //expected output returned value
         
         //create instance of MapControl class
-        MapControl instance = new MapControl();
+        InventoryControl instance = new InventoryControl();
         
         //call function to run test
         double result = instance.calcArmorStatusValue(sOfFValue, sWOfGValue, bOfRValue);
@@ -181,7 +183,7 @@ public class MapControlTest {
      * Test of calcEndLevel method, of class MapControl.
      */
     @Test
-    public void testCalcEndLevel() {
+    public void testCalcEndLevel() throws MapControlException {
         System.out.println("calcEndLevel");
         /*****************
         * Test Case #1

@@ -75,24 +75,6 @@ public class MapControl {
     private static int moveActorToLocation(Actors actor, Map coordinates) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   public double calcArmorStatusValue(double faithValue, double obedienceValue, double knowledgeValue)
-                    throws MapControlException{
-       if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){
-        throw new MapControlException("Cannot Calculate Average of Attributes "
-                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
-                                        + "One of the above Attributes is greater than 100.");
-       }
-       if (faithValue < 0 || obedienceValue < 0 || knowledgeValue < 0){
-	throw new MapControlException("Cannot Calculate Average of Attributes "
-                                        + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge"+ knowledgeValue
-                                        + "One of the above Attributes is less than 0.");
-       }
-       else {
-           double valueTotal = faithValue + obedienceValue + knowledgeValue;
-           double valueAverage = valueTotal / 3;
-           return valueAverage;
-       }
-   }
     public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double sOfFValue, double sWOfGValue, double bOfRValue)
                     throws MapControlException{
         if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100){

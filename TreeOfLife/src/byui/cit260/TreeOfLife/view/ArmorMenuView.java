@@ -56,7 +56,7 @@ public class ArmorMenuView extends View {
         addArmorMenu.display();
     }
 
-    private void checkArmor(){
+    public void checkArmor(){
         ArmorPiece faithValue = ArmorPiece.Faith;
         ArmorPiece obedienceValue = ArmorPiece.Obedience;
         ArmorPiece knowledgeValue = ArmorPiece.Knowledge;

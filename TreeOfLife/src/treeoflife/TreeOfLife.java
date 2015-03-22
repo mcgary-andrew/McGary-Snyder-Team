@@ -11,6 +11,7 @@ import byui.cit260.TreeOfLife.model.ArmorPiece;
 import byui.cit260.TreeOfLife.model.ArmorItem;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Player;
+import byui.cit260.TreeOfLife.view.ArmorMenuView;
 
 
 /**
@@ -59,6 +60,17 @@ public class TreeOfLife {
             System.out.println(te.getMessage());
             te.printStackTrace();
             startProgramView.startProgram();
+        }
+        }
+        
+        ArmorMenuView armorMenuView = new ArmorMenuView();
+        try {
+        // create StartProgramView and start the game
+        armorMenuView.checkArmor();
+                } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            armorMenuView.checkArmor();
         }
         }
         
