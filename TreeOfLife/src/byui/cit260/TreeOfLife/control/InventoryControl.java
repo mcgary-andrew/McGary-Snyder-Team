@@ -14,7 +14,7 @@ import byui.cit260.TreeOfLife.model.ArmorItem;
  */
 public class InventoryControl {
     public static void addArmorItem(ArmorItem armorItem){
-        System.out.println("\n*** addArmorItem stub function called ***");
+        this.console.println("\n*** addArmorItem stub function called ***");
     }
 
     public double calcArmorStatusValue(double faithValue, double obedienceValue, double knowledgeValue) throws MapControlException {

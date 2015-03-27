@@ -15,7 +15,37 @@ public class Game implements Serializable {
         private double totalTime;
         private Actors player;
         private Location[][] locations;
-        private ArmorPiece[] armorPieces; 
+        private ArmorPiece[] armorPieces;
+        private double obedience;
+        private double faith;
+        private double knowledge;
+        
+        
+    public double getObedience() {
+        return obedience;
+    }
+
+    public void setObedience(double obedience) {
+        this.obedience = obedience;
+    }
+
+    public double getFaith() {
+        return faith;
+    }
+
+    public void setFaith(double faith) {
+        this.faith = faith;
+    }
+
+    public double getKnowledge() {
+        return knowledge;
+    }
+
+    public void setKnowledge(double knowledge) {
+        this.knowledge = knowledge;
+    }
+   
+                
 
     public ArmorPiece[] getArmorPieces() {
         return armorPieces;

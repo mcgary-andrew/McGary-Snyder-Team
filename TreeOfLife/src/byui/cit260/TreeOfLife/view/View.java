@@ -5,7 +5,10 @@
  */
 package byui.cit260.TreeOfLife.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -14,6 +17,10 @@ import java.util.Scanner;
 public abstract class  View implements ViewInterface {
     
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = TreeOfLife.getInFile();
+    protected final PrintWriter console = TreeOfLife.getOutFile();
+    
 
     public String getPromptMessage() {
         return promptMessage;
@@ -23,8 +30,7 @@ public abstract class  View implements ViewInterface {
         this.promptMessage = message;
     }
     
-    public View(String promptMessage) {
-        this.promptMessage = promptMessage;
+    public View() {
     }
 
  
@@ -33,7 +39,7 @@ public abstract class  View implements ViewInterface {
         
         char value;
         do {
-            System.out.println(this.promptMessage); //display the main menu
+            this.console.println(this.promptMessage); //display the main menu
             
             String input; 
             input = this.getInput();//get the user's selection
@@ -49,24 +55,26 @@ public abstract class  View implements ViewInterface {
     public String getInput() {
         boolean valid = false; // indicates if the selection has been retrieved
         String selection = null;
-        Scanner keyboard = new Scanner(System.in);
-        
+        try{
         while(!valid){//while a valid selection has not been retrieved
             
             //prompt for the selection
-            System.out.println("Main Menu Selection:");
+            this.console.println("Main Menu Selection:");
             
             //get the name from the keyboard and trim off the blanks
-            selection = keyboard.nextLine();
+            selection = this.keyboard.readLine();
             selection = selection.trim();
             
             //if the name is invalid (less than two characters in length))
             if (selection.length() > 1){
-                System.out.println("Invalid selection");
+                this.console.println("Invalid selection");
                 continue; //and repeats again
                 }
             break; //out of the (exit) the repetition
         }
+        } catch (Exception e) {
+                this.console.println("Error reading input: " + e.getMessage());
+                }
         
         return selection; // return the name
     }

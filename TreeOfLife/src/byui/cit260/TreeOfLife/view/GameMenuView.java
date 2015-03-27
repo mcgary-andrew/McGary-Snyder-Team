@@ -43,21 +43,21 @@ public class GameMenuView extends View {
             case 'E': // Exit
                 return;
             default:
-                System.out.println("\n*** Invalid Selection ***");
+                this.console.println("\n*** Invalid Selection ***");
                 break;
         }
     }
     
     private void saveGame() {
-       System.out.println("*** saveGame function called ***");
+       this.console.println("*** saveGame function called ***");
     }
 
     private void resumeGame() {
-        System.out.println("*** resumeGame function called ***");
+        this.console.println("*** resumeGame function called ***");
     }
 
     private void displayAddArmorMenu() {
-        System.out.println("*** displayAddArmorMenu function called ***");
+        this.console.println("*** displayAddArmorMenu function called ***");
     }
     
 }

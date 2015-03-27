@@ -43,7 +43,7 @@ public class ArmorMenuView extends View {
             case 'E': // Exit
                 return;
             default:
-                System.out.println("\n*** Invalid Selection ***");
+                this.console.println("\n*** Invalid Selection ***");
                 break;
         }
     }

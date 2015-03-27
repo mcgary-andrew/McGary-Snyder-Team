@@ -5,6 +5,9 @@
  */
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.control.GameControl;
+import treeoflife.TreeOfLife;
+
 
 /**
  *
@@ -18,6 +21,7 @@ public class MainMenuView extends View{
             + "\n| Main Menu"
             + "\n-----------------------------------------"
             + "\nB - Begin Game"
+            + "\nG - Get and Start saved game"
             + "\nH - Help"
             + "\nS - Save"
             + "\nE - Exit"
@@ -33,6 +37,9 @@ public class MainMenuView extends View{
             case 'B': // Begin game
                 this.startNewGame();
                 break;
+            case 'G': // Get and start saved game
+                this.startExistingGame();
+                break;
             case 'H': // Help
                 this.displayHelpMenu();
                 break;
@@ -42,7 +49,7 @@ public class MainMenuView extends View{
             case 'E': // Exit
                 return;
             default:
-                System.out.println("\n*** Invalid Selection ***");
+                this.console.println("\n*** Invalid Selection ***");
                 break;
         }
     }
@@ -59,7 +66,34 @@ public class MainMenuView extends View{
     }
 
     private void saveGame() {
-       System.out.println("*** startExistingGame function called ***");
+       System.out.println("\n\nEnter the file path for file where the game"
+            + "is to be saved.");
+       String filePath = this.getInput();
+       
+       try{
+           //save the game to the specified file
+           GameControl.saveGame(TreeOfLife.getCurrentGame(), filePath);
+       }catch (Exception ex) {
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
+    }
+
+    private void startExistingGame() {
+        System.out.println("\n\nEnter the file path for the file where the game"
+        + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            //start a saved game
+            GameControl.getSavedGame(filePath);
+         }catch (Exception ex) {
+             ErrorView.display("MainMenuView", ex.getMessage());
+         }
+        
+       //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
     
 }
