@@ -74,7 +74,8 @@ public class StartProgramView {
             System.out.println("Enter the player's name below:");
             
             //get the name from the keyboard and trim off the blanks
-            playersName = this.keyboard.readLine();
+            Scanner keyboard = new Scanner(System.in);
+            playersName = keyboard.nextLine();
             playersName = playersName.trim();
             
             //if the name is invalid (less than two characters in length))
