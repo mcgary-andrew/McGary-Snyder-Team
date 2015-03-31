@@ -16,6 +16,8 @@ import treeoflife.TreeOfLife;
 public class ProgramControl {
 
     public static Player createPlayer(String name) {
+        
+        
         if (name == null){
             return null;
         }

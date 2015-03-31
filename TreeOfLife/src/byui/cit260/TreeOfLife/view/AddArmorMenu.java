@@ -5,13 +5,6 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.model.ArmorItem;
-import byui.cit260.TreeOfLife.model.ArmorPiece;
-import byui.cit260.TreeOfLife.model.Actors;
-import java.util.Scanner;
-import treeoflife.TreeOfLife;
-import static treeoflife.TreeOfLife.player;
-
 /**
  *
  * @author Andrew
@@ -54,7 +47,7 @@ public class AddArmorMenu extends View {
     }
 
     private void addSofG() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     private void addBofR() {

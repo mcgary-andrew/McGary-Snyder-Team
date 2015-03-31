@@ -6,30 +6,29 @@
 package byui.cit260.TreeOfLife.view;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 /**
  *
- * @author krystalsnyder
+ * @author Andrew
  */
-public class ActorReportView {
+public class ArmorReportView {
     
-    private static PrintWriter actorReport = null;
+    private static final PrintWriter armorReport = null;
     private static PrintWriter logFile = null;
     private static PrintWriter outFile = null;
-    private static PrintWriter inFile = null;
+    private static final PrintWriter inFile = null;
     
    
-    public static void ActorReportView(){
+    public static void ArmorReport(){
         try{
-            ActorReportView.logFile = logFile;
+            logFile = logFile;
                 new BufferedReader(new InputStreamReader(System.in));
-            ActorReportView.outFile = new PrintWriter(System.out, true);
+            outFile = new PrintWriter(System.out, true);
             
         String filePath = "log.txt";
-        ActorReportView.logFile = new PrintWriter(filePath);
+        logFile = new PrintWriter(filePath);
         
         } catch (Exception e) {
             System.out.println("Exception: " + e.toString() +
@@ -40,17 +39,17 @@ public class ActorReportView {
         
         finally {
             //try {
-                if (ActorReportView.inFile != null)
-                    ActorReportView.inFile.close();
+                if (inFile != null)
+                    inFile.close();
                 
-                if (ActorReportView.outFile != null)
-                    ActorReportView.outFile.close();
+                if (outFile != null)
+                    outFile.close();
                 
-                if (ActorReportView.logFile != null)
-                    ActorReportView.logFile.close();
+                if (logFile != null)
+                    logFile.close();
                 
-                if (ActorReportView.actorReport != null)
-                ActorReportView.actorReport.close();
+                if (armorReport != null)
+                armorReport.close();
                 
             //}  // catch (IOException ex) {
                 //System.out.println("Error closing files");
@@ -65,15 +64,15 @@ public class ActorReportView {
     }
 
     public static void setInFile(PrintWriter inFile) {
-        ActorReportView.inFile = inFile;
+        inFile = inFile;
     }
 
-    public static PrintWriter getActorReport() {
-        return actorReport;
+    public static PrintWriter getArmorReport() {
+        return armorReport;
     }
 
-    public static void setActorReport(PrintWriter actorReport) {
-        ActorReportView.actorReport = actorReport;
+    public static void setArmorReport(PrintWriter armorReport) {
+        armorReport = armorReport;
     }
 
     public static PrintWriter getLogFile() {
@@ -81,7 +80,7 @@ public class ActorReportView {
     }
 
     public static void setLogFile(PrintWriter logFile) {
-        ActorReportView.logFile = logFile;
+        logFile = logFile;
     }
 
     public static PrintWriter getOutFile() {
@@ -89,8 +88,6 @@ public class ActorReportView {
     }
 
     public static void setOutFile(PrintWriter outFile) {
-        ActorReportView.outFile = outFile;
+        outFile = outFile;
     }
-    
-    
 }

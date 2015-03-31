@@ -34,7 +34,6 @@ public abstract class  View implements ViewInterface {
    }
    
    public View (String promptMessage){
-       
    }
 
  

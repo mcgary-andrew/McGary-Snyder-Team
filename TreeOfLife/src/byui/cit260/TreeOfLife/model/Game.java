@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
         private double totalTime;
-        private Actors player;
+        private Player player;
         private Location[][] locations;
         private ArmorPiece[] armorPieces;
         private double obedience;
@@ -73,11 +73,11 @@ public class Game implements Serializable {
         this.totalTime = totalTime;
     }
 
-    public Actors getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Actors Player) {
+    public void setPlayer(Player Player) {
         this.player = Player;
     }
         

@@ -57,7 +57,8 @@ public class GameMenuView extends View {
     }
 
     private void displayAddArmorMenu() {
-        this.console.println("*** displayAddArmorMenu function called ***");
+        AddArmorMenu addArmorMenu = new AddArmorMenu();
+        addArmorMenu.display();
     }
     
 }

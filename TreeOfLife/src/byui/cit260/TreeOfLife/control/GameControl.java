@@ -9,7 +9,8 @@ import byui.cit260.TreeOfLife.exceptions.GameControlException;
 import byui.cit260.TreeOfLife.model.ArmorPiece;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
-import byui.cit260.TreeOfLife.model.Actors;
+import byui.cit260.TreeOfLife.model.Map;
+import byui.cit260.TreeOfLife.model.Player;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -24,7 +25,7 @@ import treeoflife.TreeOfLife;
  */
 public class GameControl {
     
-    public static void createNewGame(Actors player){
+    public static void createNewGame(Player player){
         Game game = new Game(); //create new game
         TreeOfLife.setCurrentGame(game); //save in TreeOfLife
         
@@ -38,7 +39,7 @@ public class GameControl {
         game.setLocation(locations); //save map in game
         
         //move players to starting position in the map
-       // MapControl.movePlayersToStartLocation(Locations[1][1]);
+        //MapControl.movePlayersToStartLocation(Map[1][1]);
     }
 
     public static void saveGame(Game game, String filePath) 

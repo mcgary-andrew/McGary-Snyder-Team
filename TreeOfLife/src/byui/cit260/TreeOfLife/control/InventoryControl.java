@@ -5,7 +5,7 @@
  */
 package byui.cit260.TreeOfLife.control;
 
-import byui.cit260.TreeOfLife.exceptions.MapControlException;
+import byui.cit260.TreeOfLife.exceptions.InventoryControlException;
 import byui.cit260.TreeOfLife.model.ArmorItem;
 
 /**
@@ -17,12 +17,12 @@ public class InventoryControl {
         System.out.println("\n*** addArmorItem stub function called ***");
     }
 
-    public double calcArmorStatusValue(double faithValue, double obedienceValue, double knowledgeValue) throws MapControlException {
+    public double calcArmorStatusValue(double faithValue, double obedienceValue, double knowledgeValue) throws InventoryControlException {
         if (faithValue > 100 || obedienceValue > 100 || knowledgeValue > 100) {
-            throw new MapControlException("Cannot Calculate Average of Attributes " + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge" + knowledgeValue + "One of the above Attributes is greater than 100.");
+            throw new InventoryControlException("Cannot Calculate Average of Attributes " + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge" + knowledgeValue + "One of the above Attributes is greater than 100.");
         }
         if (faithValue < 0 || obedienceValue < 0 || knowledgeValue < 0) {
-            throw new MapControlException("Cannot Calculate Average of Attributes " + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge" + knowledgeValue + "One of the above Attributes is less than 0.");
+            throw new InventoryControlException("Cannot Calculate Average of Attributes " + "Faith" + faithValue + "," + "Obedience" + obedienceValue + "," + "Knowledge" + knowledgeValue + "One of the above Attributes is less than 0.");
         } else {
             double valueTotal = faithValue + obedienceValue + knowledgeValue;
             double valueAverage = valueTotal / 3;

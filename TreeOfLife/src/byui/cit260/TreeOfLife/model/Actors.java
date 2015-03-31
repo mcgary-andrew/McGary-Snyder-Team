@@ -17,23 +17,21 @@ public enum Actors implements Serializable{
     Sam("The youngest boy and faithful brother of Nephi.");
     
     //class instance variables
-    public final String PlayerName;
     private final String description;
     private final Map coordinates;
     private ArmorPiece[] armor;
 
-    public ArmorPiece[] getarmor() {
+    public ArmorPiece[] getArmor() {
         return armor;
     }
 
-    public void setarmor(ArmorPiece[] armor) {
+    public void setArmor(ArmorPiece[] armor) {
         this.armor = armor;
     }
 
     private Actors(String description) {
     this.description = description;
     coordinates = new Map(1,1);
-    PlayerName = new String();
     }
     public static Actors getLehi() {
         return Lehi;
@@ -54,12 +52,8 @@ public enum Actors implements Serializable{
         return coordinates;
     }
 
-    public String getPlayerName() {
-        return PlayerName;
-    }
-
     @Override
     public String toString() {
-        return "Player{" + "PlayerName=" + PlayerName + "description=" + description + "coordinates=" + coordinates + '}';
+        return "Player{" + "description=" + description + "coordinates=" + coordinates + '}';
     }   
 }

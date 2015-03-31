@@ -5,7 +5,7 @@
  */
 package byui.cit260.TreeOfLife.control;
 
-import byui.cit260.TreeOfLife.exceptions.MapControlException;
+import byui.cit260.TreeOfLife.exceptions.InventoryControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,10 +20,10 @@ public class MapControlTest {
 
     /**
      * Test of calcAverageAttributes method, of class MapControl.
-     * @throws byui.cit260.TreeOfLife.exceptions.MapControlException
+     * @throws byui.cit260.TreeOfLife.exceptions.InventoryControlException
      */
     @Test
-    public void testCalcAverageAttributes() throws MapControlException {
+    public void testCalcAverageAttributes() throws InventoryControlException {
         System.out.println("calcAverageAttributes");
         /*****************
          * Test Case #1
@@ -101,7 +101,7 @@ public class MapControlTest {
         assertEquals(expResult, result, 0.01);
         
     }
-    public void testCalcArmorStatusValue() throws MapControlException {
+    public void testCalcArmorStatusValue() throws InventoryControlException {
         System.out.println("calcArmorStatusValue");
         /*****************
          * Test Case #1
@@ -183,7 +183,7 @@ public class MapControlTest {
      * Test of calcEndLevel method, of class MapControl.
      */
     @Test
-    public void testCalcEndLevel() throws MapControlException {
+    public void testCalcEndLevel() throws InventoryControlException {
         System.out.println("calcEndLevel");
         /*****************
         * Test Case #1

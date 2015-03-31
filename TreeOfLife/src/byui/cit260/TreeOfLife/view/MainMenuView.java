@@ -55,7 +55,27 @@ public class MainMenuView extends View{
     }
 
     private void startNewGame() {
+        //create a new game
+        GameControl.createNewGame(TreeOfLife.getPlayer());
         //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
+    
+    private void startExistingGame() {
+        System.out.println("\n\nEnter the file path for the file where the game"
+        + "is saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            //start a saved game
+            GameControl.getSavedGame(filePath);
+         }catch (Exception ex) {
+             ErrorView.display("MainMenuView", ex.getMessage());
+         }
+        
+       //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
@@ -78,22 +98,6 @@ public class MainMenuView extends View{
        }
     }
 
-    private void startExistingGame() {
-        System.out.println("\n\nEnter the file path for the file where the game"
-        + "is to be saved.");
-        
-        String filePath = this.getInput();
-        
-        try {
-            //start a saved game
-            GameControl.getSavedGame(filePath);
-         }catch (Exception ex) {
-             ErrorView.display("MainMenuView", ex.getMessage());
-         }
-        
-       //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
-    }
+    
     
 }

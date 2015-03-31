@@ -21,6 +21,7 @@ public class ActorMenuView extends View {
             + "\nL - Lehi"
             + "\nN - Nephi"
             + "\nS - Sam"
+            + "\nR - Report"
             + "\nE - Exit"
             + "\n-----------------------------------------");
     }
