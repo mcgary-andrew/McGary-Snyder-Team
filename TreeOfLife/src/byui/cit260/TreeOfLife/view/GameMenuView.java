@@ -18,7 +18,8 @@ public class GameMenuView extends View {
             + "\n Game Menu"
             + "\n-----------------------------------------"
             + "\nR - Resume" 
-            + "\nS - Save" 
+            + "\nS - Save"
+            + "\nM - Display Map" 
             + "\nA - Go to armor shop"
             + "\nE - Exit"
             + "\n-----------------------------------------");
@@ -36,6 +37,9 @@ public class GameMenuView extends View {
                 break;
             case 'S': // Save
                 this.saveGame();
+                break;
+            case 'M':
+                this.displayMap();
                 break;
             case 'A': // Go to Armor Shop
                 this.displayAddArmorMenu();
@@ -59,6 +63,10 @@ public class GameMenuView extends View {
     private void displayAddArmorMenu() {
         AddArmorMenu addArmorMenu = new AddArmorMenu();
         addArmorMenu.display();
+    }
+
+    private void displayMap() {
+        
     }
     
 }

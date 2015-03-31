@@ -17,6 +17,7 @@ public class Location implements Serializable {
     private ArmorItem armorObtained;
     private Scene scene;
     
+        
     public int getSpaceNumber() {
         return spaceNumber;
     }

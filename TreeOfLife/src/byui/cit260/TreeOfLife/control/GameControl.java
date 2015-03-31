@@ -6,6 +6,7 @@
 package byui.cit260.TreeOfLife.control;
 
 import byui.cit260.TreeOfLife.exceptions.GameControlException;
+import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.ArmorPiece;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
@@ -25,7 +26,7 @@ import treeoflife.TreeOfLife;
  */
 public class GameControl {
     
-    public static void createNewGame(Player player){
+    public static void createNewGame(Player player) throws MapControlException{
         Game game = new Game(); //create new game
         TreeOfLife.setCurrentGame(game); //save in TreeOfLife
         
@@ -35,9 +36,9 @@ public class GameControl {
         ArmorPiece[] armorPieces = new ArmorPiece[3];
         game.setArmorPieces(armorPieces);
         
-        Location[][] locations = MapControl.createMap();
+        Location[][] locations = MapControl.createMap(null);
         game.setLocation(locations); //save map in game
-        
+      
         //move players to starting position in the map
         //MapControl.movePlayersToStartLocation(Map[1][1]);
     }

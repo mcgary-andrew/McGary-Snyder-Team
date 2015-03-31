@@ -16,6 +16,14 @@ public class Map implements Serializable {
     private int numberOfColumns;
     private int numberOfRows;
     private Location[][] locations;
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
     
     public Map() {
     }
