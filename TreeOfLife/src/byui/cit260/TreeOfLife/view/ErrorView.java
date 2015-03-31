@@ -17,7 +17,7 @@ public class ErrorView {
     private static final PrintWriter logFile = TreeOfLife.getLogFile();
     
     public static void display(String className, String errorMessage){
-        errorFile.prinln(
+        errorFile.println(
                 "---------------------------------------"
                 + "\n - ERROR - " + errorMessage
                 +"\n--------------------------------------");

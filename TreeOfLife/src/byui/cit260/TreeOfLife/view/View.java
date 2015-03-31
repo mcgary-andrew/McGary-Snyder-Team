@@ -30,8 +30,12 @@ public abstract class  View implements ViewInterface {
         this.promptMessage = message;
     }
     
-    public View() {
-    }
+   public View() {
+   }
+   
+   public View (String promptMessage){
+       
+   }
 
  
     @Override 

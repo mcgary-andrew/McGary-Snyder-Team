@@ -132,17 +132,17 @@ public class TreeOfLife {
             te.printStackTrace();
             startProgramView.startProgram();
         }
-        }
+        
         
         ArmorMenuView armorMenuView = new ArmorMenuView();
         try {
         armorMenuView.checkArmor();
-                } catch (Throwable te){
+        } catch (Throwable te){
             System.out.println(te.getMessage());
             te.printStackTrace();
             armorMenuView.checkArmor();
         }
-        }
+    }
         
 //        
 //        Actors playerOne = new Actors();

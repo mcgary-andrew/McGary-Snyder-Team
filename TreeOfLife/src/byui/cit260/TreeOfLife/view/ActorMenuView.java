@@ -41,6 +41,9 @@ public class ActorMenuView extends View {
             case 'N': //Nephi
                 this.createNephi('N');
                 break;
+            case 'R': //print report
+                this.createReport();
+                break;
             case 'E': // Exit
                 return;
             default:
@@ -61,6 +64,10 @@ public class ActorMenuView extends View {
 
     private void createSam(char c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void createReport() {
+        ActorReportView arv = new ActorReportView();
     }
 
 }
