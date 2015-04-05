@@ -14,9 +14,9 @@ import treeoflife.TreeOfLife;
  *
  * @author Krystal
  */
-public abstract class  View implements ViewInterface {
+public abstract class View implements ViewInterface {
     
-    private String promptMessage;
+    private String promptMessage = "";
     
     protected final BufferedReader keyboard = TreeOfLife.getInFile();
     protected final PrintWriter console = TreeOfLife.getOutFile();
@@ -31,27 +31,26 @@ public abstract class  View implements ViewInterface {
     }
     
    public View() {
+       
    }
    
    public View (String promptMessage){
+       this.promptMessage = promptMessage;
    }
 
  
     @Override 
     public void display() {
-        
-        char value;
+        String input;
         do {
             this.console.println(this.promptMessage); //display the main menu
             
-            String input; 
             input = this.getInput();//get the user's selection
-            value = input.charAt(0);//get the first character of string
             
-            this.doAction(value); //do action based on selection
+            this.doAction(input); //do action based on selection
             
         }
-            while (value != 'E'); // a selection is not "Exit"
+            while (input != "E"); // a selection is not "Exit"
     }
 
     @Override    
@@ -76,7 +75,7 @@ public abstract class  View implements ViewInterface {
             break; //out of the (exit) the repetition
         }
         } catch (Exception e) {
-                this.console.println("Error reading input: " + e.getMessage());
+                System.out.println("Error reading input: " + e.getMessage());
                 }
         
         return selection; // return the name

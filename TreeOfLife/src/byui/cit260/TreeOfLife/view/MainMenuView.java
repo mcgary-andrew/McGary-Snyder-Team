@@ -6,6 +6,9 @@
 package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.GameControl;
+import byui.cit260.TreeOfLife.exceptions.MapControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import treeoflife.TreeOfLife;
 
 
@@ -28,35 +31,13 @@ public class MainMenuView extends View{
             + "\n-----------------------------------------");
     }
 
-    @Override
-    public void doAction(Object obj) {
-        
-        char value = (char) obj;
-        
-        switch (value){
-            case 'B': // Begin game
-                this.startNewGame();
-                break;
-            case 'G': // Get and start saved game
-                this.startExistingGame();
-                break;
-            case 'H': // Help
-                this.displayHelpMenu();
-                break;
-            case 'S': //Save
-                this.saveGame();
-                break;
-            case 'E': // Exit
-                return;
-            default:
-                this.console.println("\n*** Invalid Selection ***");
-                break;
-        }
-    }
-
     private void startNewGame() {
-        //create a new game
-        GameControl.createNewGame(TreeOfLife.getPlayer());
+        try {
+            //create a new game
+            GameControl.createNewGame(TreeOfLife.getPlayer());
+        } catch (MapControlException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
@@ -97,7 +78,34 @@ public class MainMenuView extends View{
            ErrorView.display("MainMenuView", ex.getMessage());
        }
     }
+   @Override
+    public boolean doAction(Object obj) {
 
+        String value = (String) obj;
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
+        
+        switch (value){
+            case "B":
+                this.startNewGame();// Begin game
+                break;
+            case "G": // Get and start saved game
+                this.startExistingGame();
+                break;
+            case "H": // Help
+                this.displayHelpMenu();
+                break;
+            case "S": //Save
+                this.saveGame();
+                break;
+            case "E": // Exit
+                return true;
+            default:
+                this.console.println("\n*** Invalid Selection ***");
+                break;
+        }
+        return false;
+        }
     
     
 }

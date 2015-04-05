@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Andrew
  */
-public class StartProgramView {
+public class StartProgramView{
     public StartProgramView(){
         
     }
@@ -101,4 +101,12 @@ public class StartProgramView {
         
     }
     
+//    @Override
+//    public boolean doAction(Object obj){
+//        String value = (String) obj;
+//        value = value.toUpperCase();
+//        char choice = value.charAt(0);
+//        
+//        return false;
+//    }
 }
