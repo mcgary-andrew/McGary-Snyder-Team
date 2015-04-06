@@ -13,12 +13,12 @@ import java.util.Scanner;
  *
  * @author Andrew
  */
-public class StartProgramView{
-    public StartProgramView(){
-        
+public class StartProgramView {
+    public StartProgramView(){  
     }
     public void startProgram(){
         this.displayBanner();
+//        this.display();
         
         //prompt the player to enter their name
         String name = getPlayersName();

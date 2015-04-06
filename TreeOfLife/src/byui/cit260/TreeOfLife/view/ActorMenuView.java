@@ -28,7 +28,7 @@ public class ActorMenuView extends View {
     
     
  @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         
         char value = (char) obj;
         
@@ -46,13 +46,13 @@ public class ActorMenuView extends View {
                 this.createReport();
                 break;
             case 'E': // Exit
-                return;
+                return false;
             default:
                 this.console.println("\n*** Invalid Selection ***");
                 break;
         }
         
-        
+        return true;
     } 
 
     private void createLehi(char c) {

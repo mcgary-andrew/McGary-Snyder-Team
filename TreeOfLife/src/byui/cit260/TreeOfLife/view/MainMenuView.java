@@ -99,13 +99,11 @@ public class MainMenuView extends View{
                 this.saveGame();
                 break;
             case "E": // Exit
-                return true;
+                System.exit(0);
             default:
                 this.console.println("\n*** Invalid Selection ***");
                 break;
         }
-        return false;
+        return true;
         }
-    
-    
 }

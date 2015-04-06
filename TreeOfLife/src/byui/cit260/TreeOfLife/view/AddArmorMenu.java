@@ -24,7 +24,7 @@ public class AddArmorMenu extends View {
    
 
     @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         
         char value = (char) obj;
         
@@ -39,11 +39,12 @@ public class AddArmorMenu extends View {
                 this.addBofR();
                 break;
             case 'E': // Exit
-                return;
+                return false;
             default:
                 this.console.println("\n*** Invalid Selection ***");
                 break;
         }
+        return true;
     }
 
     private void addSofG() {

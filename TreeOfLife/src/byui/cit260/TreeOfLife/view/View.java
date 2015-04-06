@@ -7,7 +7,6 @@ package byui.cit260.TreeOfLife.view;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import treeoflife.TreeOfLife;
 
 /**
@@ -16,7 +15,7 @@ import treeoflife.TreeOfLife;
  */
 public abstract class View implements ViewInterface {
     
-    private String promptMessage = "";
+    private String promptMessage;
     
     protected final BufferedReader keyboard = TreeOfLife.getInFile();
     protected final PrintWriter console = TreeOfLife.getOutFile();
@@ -26,15 +25,15 @@ public abstract class View implements ViewInterface {
         return promptMessage;
     }
 
-    public void setPromptMessage(String message) {
-        this.promptMessage = message;
+    public void setPromptMessage(String promptMessage) {
+        this.promptMessage = promptMessage;
     }
     
-   public View() {
-       
-   }
+//   public View() {
+//       
+//   }
    
-   public View (String promptMessage){
+   public View(String promptMessage){
        this.promptMessage = promptMessage;
    }
 
@@ -49,26 +48,27 @@ public abstract class View implements ViewInterface {
             
             this.doAction(input); //do action based on selection
             
-        }
-            while (input != "E"); // a selection is not "Exit"
+        } while (input != "E"); // a selection is not "Exit"
     }
 
     @Override    
     public String getInput() {
-        boolean valid = false; // indicates if the selection has been retrieved
         String selection = null;
+        boolean valid = false; // indicates if the selection has been retrieved
+
         try{
         while(!valid){//while a valid selection has not been retrieved
             
             //prompt for the selection
-            this.console.println("Main Menu Selection:");
+            this.console.println("Selection:");
             
             //get the name from the keyboard and trim off the blanks
             selection = this.keyboard.readLine();
             selection = selection.trim();
+            selection = selection.toUpperCase();
             
             //if the name is invalid (less than two characters in length))
-            if (selection.length() > 1){
+            if (selection.length() < 1){
                 this.console.println("Invalid selection");
                 continue; //and repeats again
                 }

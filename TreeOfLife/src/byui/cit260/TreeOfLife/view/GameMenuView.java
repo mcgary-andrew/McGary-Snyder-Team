@@ -27,7 +27,7 @@ public class GameMenuView extends View {
     
     
  @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         
         char value = (char) obj;
         
@@ -45,11 +45,12 @@ public class GameMenuView extends View {
                 this.displayAddArmorMenu();
                 break;
             case 'E': // Exit
-                return;
+                return false;
             default:
                 this.console.println("\n*** Invalid Selection ***");
                 break;
         }
+        return true;
     }
     
     private void saveGame() {

@@ -85,14 +85,7 @@ public class TreeOfLife {
     public static void main(String[] args) {
         // create StartProgramView and start the game
         StartProgramView startProgramView = new StartProgramView();
-//        try {
-        startProgramView.startProgram();
-//        
-//        } catch (Throwable te){
-//            System.out.println(te.getMessage());
-//            te.printStackTrace();
-//            startProgramView.startProgram();
-//        }
+        
         try{
             // open character stream files for end user input and output
             TreeOfLife.inFile = 
@@ -103,6 +96,15 @@ public class TreeOfLife {
             //open log file
             String filePath = "log.txt";
             TreeOfLife.logFile = new PrintWriter(filePath);
+            
+            try {
+                startProgramView.startProgram();
+        
+            } catch (Throwable te){
+                System.out.println(te.getMessage());
+                te.printStackTrace();
+                startProgramView.startProgram();
+            }
             
         }catch (Exception e) {
             System.out.println("Exception: " + e.toString() +

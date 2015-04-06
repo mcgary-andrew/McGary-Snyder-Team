@@ -64,9 +64,9 @@ public class MapControl {
 //        startingScene.setMapSymbol(" ST ");
 //        startingScene.setBlocked(false);
 //        startingScene.setTravelTime(240);
-        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
-                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
-        startingScene.setIcon(startingSceneImage);
+//        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
+//                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
+//        startingScene.setIcon(startingSceneImage);
         scenes[SceneType.start.ordinal()] = startingScene;
         
         Scene finishScene = new Scene();
@@ -76,9 +76,9 @@ public class MapControl {
 //        finishScene.setMapSymbol(" FN ");
 //        finishScene.setBlocked(false);
 //        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        ImageIcon finishSceneImage = MapControl.getImage(finishScene, 
-                "/citbyui/cit260/treeoflife/images/finish.jpg");
-        finishScene.setIcon(finishSceneImage);
+//        ImageIcon finishSceneImage = MapControl.getImage(finishScene, 
+//                "/citbyui/cit260/treeoflife/images/finish.jpg");
+//        finishScene.setIcon(finishSceneImage);
         scenes[SceneType.start.ordinal()] = finishScene;
         
         return scenes;
