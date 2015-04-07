@@ -93,7 +93,7 @@ public class GameMenuView extends View {
                    Location characterLocation = locations[currentCoordinates.x] [currentCoordinates.y];
                    Scene scene = new Scene();
                    if(location == characterLocation) {
-                       symbol = "URHere";
+                       symbol = "You Are Here!";
                    }
                    else if(scene.isVisited() ) { 
                        //get current game
@@ -112,7 +112,6 @@ public class GameMenuView extends View {
 
         // DISPLAY ending row divider  
         System.out.println("--------------------------------");
-        
         
        
         
