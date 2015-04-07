@@ -5,10 +5,7 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.InventoryControl;
 import byui.cit260.TreeOfLife.model.ArmorPiece;
-import static byui.cit260.TreeOfLife.view.ArmorReportView.ArmorReport;
-import treeoflife.TreeOfLife;
 
 /**
  *
@@ -52,7 +49,7 @@ public class ArmorMenuView extends View {
     }
 
     private void addArmorMenu() {
-        InventoryControl.addArmorItem(TreeOfLife.getArmorItem());
+        
         
         //display the game menu
         AddArmorMenu addArmorMenu = new AddArmorMenu();
