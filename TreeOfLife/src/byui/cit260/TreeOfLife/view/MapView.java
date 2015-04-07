@@ -83,18 +83,18 @@ public class MapView extends View {
 
             String locList = "\n\nList of all Locations";
 
-            try {
-
-                SceneType[] scenes = SceneType.values();
-                for (SceneType item : scenes) {
-                    char locName = item.name().charAt(0);
-                    String locationDescription = item.getLocationDescription();
-                    locList += ("\n" + locName + " - " + locationDescription);
-                }
-
-            } catch (Exception e) {
-                ErrorView.display(this.getClass().getName(), "Error reading input " + e.getMessage());
-            }
+//            try {
+//
+//                SceneType[] scenes = SceneType.values();
+//                for (SceneType item : scenes) {
+//                    char locName = item.name().charAt(0);
+//                    String locationDescription = item.getLocationDescription();
+//                    locList += ("\n" + locName + " - " + locationDescription);
+//                }
+//
+//            } catch (Exception e) {
+//                ErrorView.display(this.getClass().getName(), "Error reading input " + e.getMessage());
+//            }
 
             output.println(locList); //write the locList ArrayList out to file
 

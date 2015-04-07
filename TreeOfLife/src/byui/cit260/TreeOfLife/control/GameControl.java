@@ -36,6 +36,9 @@ public class GameControl {
         ArmorPiece[] armorPieces = new ArmorPiece[3];
         game.setArmorPieces(armorPieces);
         
+        //open ActorMenu
+        
+        
 //        Location[][] locations = MapControl.createMap();
 //        game.setLocation(locations); //save map in game
       

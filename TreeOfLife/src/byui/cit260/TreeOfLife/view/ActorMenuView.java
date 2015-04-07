@@ -7,6 +7,7 @@ package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.model.Actors;
 import java.util.Scanner;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -30,23 +31,25 @@ public class ActorMenuView extends View {
  @Override
     public boolean doAction(Object obj) {
         
-        char value = (char) obj;
+        String value = (String) obj;
         
         switch (value){
-            case 'L': // Lehi
-                this.createLehi('L');
+            case "L": // Lehi
+                this.createActor("L");
                 break;
-            case 'S': // Sam
-                this.createSam('S');
+            case "S": // Sam
+                this.createActor("S");
                 break;
-            case 'N': //Nephi
-                this.createNephi('N');
+            case "N": //Nephi
+                this.createActor("N");
                 break;
-            case 'R': //print report
+            case "R": //print report
                 this.createReport();
                 break;
-            case 'E': // Exit
-                return false;
+            case "E": // Exit
+                MainMenuView mainMenuView = new MainMenuView();
+                mainMenuView.display();
+                break;
             default:
                 this.console.println("\n*** Invalid Selection ***");
                 break;
@@ -55,16 +58,18 @@ public class ActorMenuView extends View {
         return true;
     } 
 
-    private void createLehi(char c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void createNephi(char c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void createSam(char c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void createActor(String actor) {
+        if (actor == "L") {
+            TreeOfLife.setActors(Actors.getLehi());
+        }
+        else if (actor == "S"){
+            TreeOfLife.setActors(Actors.getSam());
+        }
+        else if (actor == "N"){
+            TreeOfLife.setActors(Actors.getNephi());
+        }
+        MapView mapView = new MapView();
+        mapView.display();
     }
 
     private void createReport() {
