@@ -12,9 +12,7 @@ import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Scene;
 import byui.cit260.TreeOfLife.model.Map;
-import java.awt.Point;
 import java.awt.image.BufferedImage;
-import javax.swing.ImageIcon;
 import treeoflife.TreeOfLife;
 
 
@@ -216,6 +214,7 @@ public class MapControl {
 //        MapControl setLevel = new MapControl();
 //        setLevel.setCurrentLevel(location);
 //
+    return 0;
     }
     public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double sOfFValue, double sWOfGValue, double bOfRValue)
                     throws InventoryControlException{

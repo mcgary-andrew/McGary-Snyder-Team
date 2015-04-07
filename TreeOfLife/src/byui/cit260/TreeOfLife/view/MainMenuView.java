@@ -23,7 +23,7 @@ public class MainMenuView extends View{
             + "\n-----------------------------------------"
             + "\n| Main Menu"
             + "\n-----------------------------------------"
-            + "\nB - Begin Game"
+            + "\nB - Begin New Game"
             + "\nG - Get and Start saved game"
             + "\nH - Help"
             + "\nS - Save"
@@ -39,8 +39,8 @@ public class MainMenuView extends View{
             Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
         //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        ActorMenuView actorMenuView = new ActorMenuView();
+        actorMenuView.display();
     }
     
     private void startExistingGame() {

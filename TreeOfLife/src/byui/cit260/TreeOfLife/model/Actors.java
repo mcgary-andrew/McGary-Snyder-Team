@@ -18,7 +18,7 @@ public enum Actors implements Serializable{
     
     //class instance variables
     private final String description;
-    private final Map coordinates;
+    //private final Map coordinates;
     private ArmorPiece[] armor;
 
     public ArmorPiece[] getArmor() {
@@ -31,7 +31,7 @@ public enum Actors implements Serializable{
 
     private Actors(String description) {
     this.description = description;
-    coordinates = new Map(1,1);
+    //coordinates = new Map(1,1);
     }
     public static Actors getLehi() {
         return Lehi;
@@ -48,12 +48,12 @@ public enum Actors implements Serializable{
         return description;
     }
     
-    public Map getCoordinates() {
-        return coordinates;
-    }
+//    public Map getCoordinates() {
+//        return coordinates;
+//    }
 
     @Override
     public String toString() {
-        return "Player{" + "description=" + description + "coordinates=" + coordinates + '}';
+        return "Player{" + "description=" + description +/* "coordinates=" + coordinates +*/ "}";
     }   
 }

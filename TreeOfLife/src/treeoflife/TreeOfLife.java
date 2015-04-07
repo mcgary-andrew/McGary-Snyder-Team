@@ -5,6 +5,7 @@
  */
 package treeoflife;
 
+import byui.cit260.TreeOfLife.model.Actors;
 import byui.cit260.TreeOfLife.view.StartProgramView;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Player;
@@ -22,6 +23,7 @@ public class TreeOfLife {
 
     private static Game currentGame = null;
     public static Player player = null;
+    private static Actors actors = null;
     
     public static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -33,8 +35,8 @@ public class TreeOfLife {
    
 }
 
-    
     public  void start(String[] args)   {
+    //public  void start(String[] args)   {
         // create StartProgramView and start the game
         
         try{
@@ -88,6 +90,14 @@ public class TreeOfLife {
 //            armorMenuView.checkArmor();
 //        }
     }  
+
+    public static Actors getActors() {
+        return actors;
+    }
+
+    public static void setActors(Actors actors) {
+        TreeOfLife.actors = actors;
+    }
     
     public static PrintWriter getLogFile() {
         return logFile;
