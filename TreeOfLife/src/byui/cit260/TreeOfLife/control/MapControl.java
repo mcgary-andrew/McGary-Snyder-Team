@@ -12,6 +12,7 @@ import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Scene;
 import byui.cit260.TreeOfLife.model.Map;
+import java.awt.Point;
 import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import treeoflife.TreeOfLife;
@@ -22,15 +23,7 @@ import treeoflife.TreeOfLife;
  * @author Andrew
  */
 public class MapControl {
-    private enum SceneType{
-        start,
-        desert,
-        building,
-        river,
-        path,
-        tree,
-        finish
-    }
+    
 
     public static Location[][] createMap(Map map) throws MapControlException {
         //Create a two dimentional of location objects
@@ -46,7 +39,15 @@ public class MapControl {
         
         return locations;        
     }
-
+    private enum SceneType{
+        start,
+        desert,
+        building,
+        river,
+        path,
+        tree,
+        finish
+    }
     private static Scene[] createScenes() throws MapControlException {
         BufferedImage image = null;
         
@@ -61,44 +62,92 @@ public class MapControl {
                 + "these things were perpared of the Lord that we might not"
                 + "perish. And we beheld the sea, which we called Irreantum, "
                 + "which, being interpreted, is many waters");
-//        startingScene.setMapSymbol(" ST ");
-//        startingScene.setBlocked(false);
-//        startingScene.setTravelTime(240);
+        startingScene.setMapSymbol(" ST ");
+        startingScene.setBlocked(false);
 //        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
 //                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
 //        startingScene.setIcon(startingSceneImage);
         scenes[SceneType.start.ordinal()] = startingScene;
         
+        Scene desertScene = new Scene();
+        desertScene.setDescription(
+                "\tLevel 2: Desert");
+        desertScene.setMapSymbol(" D ");
+        desertScene.setBlocked(false);
+//        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
+//                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
+//        startingScene.setIcon(startingSceneImage);
+        scenes[SceneType.desert.ordinal()] = desertScene;
+        
+        Scene buildingScene = new Scene();
+        buildingScene.setDescription(
+                "\tLevel 3: Great and Spacious Building");
+        buildingScene.setMapSymbol(" B ");
+        buildingScene.setBlocked(false);
+//        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
+//                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
+//        startingScene.setIcon(startingSceneImage);
+        scenes[SceneType.building.ordinal()] = buildingScene;
+        
+        Scene riverScene = new Scene();
+        riverScene.setDescription(
+                "\tLevel 4: River");
+        riverScene.setMapSymbol(" R ");
+        riverScene.setBlocked(false);
+//        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
+//                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
+//        startingScene.setIcon(startingSceneImage);
+        scenes[SceneType.river.ordinal()] = riverScene;
+        
+        Scene pathScene = new Scene();
+        pathScene.setDescription(
+                "\tLevel 5: Path to the Tree Of Life");
+        pathScene.setMapSymbol(" P ");
+        pathScene.setBlocked(false);
+//        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
+//                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
+//        startingScene.setIcon(startingSceneImage);
+        scenes[SceneType.path.ordinal()] = pathScene;
+        
+        Scene treeScene = new Scene();
+        treeScene.setDescription(
+                "\tLevel 6: Tree If Life");
+        treeScene.setMapSymbol(" T ");
+        treeScene.setBlocked(false);
+//        ImageIcon startingSceneImage = MapControl.getImage(startingScene, 
+//                "/citbyui/cit260/treeoflife/images/startingPoint.jpg");
+//        startingScene.setIcon(startingSceneImage);
+        scenes[SceneType.tree.ordinal()] = treeScene;
+        
         Scene finishScene = new Scene();
         finishScene.setDescription(
                 "\nCongratulations! Well done thou good and faithful servant. "
                         + "You have made it to the Tree of Life!");
-//        finishScene.setMapSymbol(" FN ");
-//        finishScene.setBlocked(false);
-//        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+        finishScene.setMapSymbol(" FN ");
+        finishScene.setBlocked(true);
 //        ImageIcon finishSceneImage = MapControl.getImage(finishScene, 
 //                "/citbyui/cit260/treeoflife/images/finish.jpg");
 //        finishScene.setIcon(finishSceneImage);
-        scenes[SceneType.start.ordinal()] = finishScene;
+        scenes[SceneType.finish.ordinal()] = finishScene;
         
         return scenes;
     }
     
-    public static int movePlayersToStartLocation(Map[][] points) {
+    public static int movePlayersToStartLocation(Map map) throws MapControlException {
         //for every actor
         Actors[] actors = Actors.values();
         
         for (Actors actor : actors){
             Map coordinates = actor.getCoordinates();
-            int returnValue = MapControl.moveActorToLocation(actor, coordinates);
+            MapControl.moveActorToLocation(actor, coordinates);
         }
         return 0;      
        
     }
-
+    
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
-
+        
         locations[0][0].setScene(scenes[SceneType.desert.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.desert.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.building.ordinal()]);
@@ -145,8 +194,30 @@ public class MapControl {
        
    }
 
-    private static int moveActorToLocation(Actors actor, Map coordinates) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private static int moveActorToLocation(Actors actor, Map coordinates) throws MapControlException {
+        Map map = TreeOfLife.getCurrentGame().getMap();
+
+        int newRow = coordinates.x ; //@todo removing -1 gets rid of error (location is outside the bounds of the map).  Why is it necessary? 
+        int newColumn = coordinates.y ;
+
+        if (newRow < 0 || newRow >= map.getNumberOfRows()
+                || newColumn < 0 || newColumn >= map.getNumberOfColumns()) {
+            throw new MapControlException("Can not move actor to location "
+                    + coordinates.x + ", " + coordinates.y
+                    + " because that location is out of bounds "
+                    + " for this game.");
+        }
+
+        
+        actor.getCoordinates().x = coordinates.x;
+        actor.getCoordinates().y = coordinates.y;
+        //set location as visited
+        Location location = map.getLocations()[coordinates.x][coordinates.y];
+        location.setVisited(true);
+         //if moves to new level then setCurrentLevel
+        MapControl setLevel = new MapControl();
+        setLevel.setCurrentLevel(location);
+
     }
     public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double sOfFValue, double sWOfGValue, double bOfRValue)
                     throws InventoryControlException{

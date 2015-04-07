@@ -19,6 +19,25 @@ public class Game implements Serializable {
         private double obedience;
         private double faith;
         private double knowledge;
+        private Map map;
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Actors[] getActors() {
+        return actors;
+    }
+
+    public void setActors(Actors[] actors) {
+        this.actors = actors;
+    }
+        private Actors[] actors;
+
         
         
     public double getObedience() {

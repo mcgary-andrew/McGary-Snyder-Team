@@ -30,19 +30,18 @@ public class Map implements Serializable {
 
     public Map(int numberOfColumns, int numberOfRows) {
         this.numberOfColumns = numberOfColumns;
-        this.numberOfRows = numberOfColumns;
+        this.numberOfRows = numberOfRows;
         
         this.locations = new Location [numberOfColumns][numberOfRows];
         
         for (int row = 0; row < numberOfRows; row++){
             for(int column = 0; column < numberOfColumns; column++){
-                //create and intitialize new Location object instance
                 Location location = new Location();
+                Scene scene = new Scene();
                 location.setColumn(column);
                 location.setRow(row);
-                location.setVisited(false);
+                scene.setVisited(false);
                 
-                //assign the Location object to the current position in aray
                 locations[row][column] = location;
             }
         }

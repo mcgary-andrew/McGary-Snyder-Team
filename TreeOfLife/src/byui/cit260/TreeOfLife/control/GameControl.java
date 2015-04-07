@@ -10,7 +10,6 @@ import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.ArmorPiece;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
-import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Player;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

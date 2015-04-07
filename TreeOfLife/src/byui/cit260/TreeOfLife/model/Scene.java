@@ -13,12 +13,33 @@ import java.util.Objects;
  */
 public class Scene implements Serializable{
     private String description;
-    private String type;
+    private String sceneType;
     private double armorRequiredToPass;
     private boolean visited;
     private int answeredCorrectlyQuestions;
     private Scene scene;
     private Actors actor;
+    private String mapSymbol;
+    private Boolean blocked;
+    
+    
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+    
+    
+    public Boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(Boolean blocked) {
+        this.blocked = blocked;
+    }
+    
 
     public Scene getScene() {
         return scene;
@@ -49,11 +70,11 @@ public class Scene implements Serializable{
     }
 
     public String getType() {
-        return type;
+        return sceneType;
     }
 
     public void setType(String type) {
-        this.type = type;
+        this.sceneType = type;
     }
 
     public double getArmorRequiredToPass() {
@@ -82,14 +103,14 @@ public class Scene implements Serializable{
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", type=" + type + ", armorRequiredToPass=" + armorRequiredToPass + ", visited=" + visited + ", answeredCorrectlyQuestions=" + answeredCorrectlyQuestions + '}';
+        return "Scene{" + "description=" + description + ", type=" + sceneType + ", armorRequiredToPass=" + armorRequiredToPass + ", visited=" + visited + ", answeredCorrectlyQuestions=" + answeredCorrectlyQuestions + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 71 * hash + Objects.hashCode(this.description);
-        hash = 71 * hash + Objects.hashCode(this.type);
+        hash = 71 * hash + Objects.hashCode(this.sceneType);
         hash = 71 * hash + (int) (Double.doubleToLongBits(this.armorRequiredToPass) ^ (Double.doubleToLongBits(this.armorRequiredToPass) >>> 32));
         hash = 71 * hash + (this.visited ? 1 : 0);
         hash = 71 * hash + this.answeredCorrectlyQuestions;
@@ -108,7 +129,7 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.type, other.type)) {
+        if (!Objects.equals(this.sceneType, other.sceneType)) {
             return false;
         }
         if (Double.doubleToLongBits(this.armorRequiredToPass) != Double.doubleToLongBits(other.armorRequiredToPass)) {
@@ -122,4 +143,5 @@ public class Scene implements Serializable{
         }
         return true;
     }
+
 }

@@ -7,6 +7,9 @@ package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.ProgramControl;
 import byui.cit260.TreeOfLife.model.Player;
+import java.io.BufferedReader;
+import treeoflife.TreeOfLife;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,10 @@ import java.util.Scanner;
  * @author Andrew
  */
 public class StartProgramView {
+    
+    protected final BufferedReader keyboard = TreeOfLife.getInFile();
+    protected final PrintWriter console = TreeOfLife.getOutFile();
+    
     public StartProgramView(){  
     }
     public void startProgram(){
@@ -37,9 +44,9 @@ public class StartProgramView {
     }           
 
     private void displayBanner() {
-        System.out.println("\n\n****************************************************************");
+        this.console.println("\n\n****************************************************************");
         
-        System.out.println("*                                                              *"
+        this.console.println("*                                                              *"
                 + "\n* In this game you will have the opportunity to choose between *"
                 + "\n* three characters to embark on a journey to the Tree of Life. *"
                 + "\n* Your journey will begin in the land of Lehi's Drea, taking   *"
@@ -47,7 +54,7 @@ public class StartProgramView {
                 + "\n* forest, across rivers, through mountains in hopes of         *"
                 + "\n* reaching your final destination, The Tree of Life.           *");
         
-        System.out.println("*                                                              *"
+        this.console.println("*                                                              *"
                 + "\n* The journey will not be an easy one. It will require faith   *"
                 + "\n* and the ability to stay the course despite the hardships     *"
                 + "\n* you encounter. You will need to acquire the Armor of God     *"
@@ -62,7 +69,7 @@ public class StartProgramView {
                 + "\n* and if you fail to reach either tree, you will surely have   *"
                 + "\n* been lost in the Spacious Building.                          *");
         
-        System.out.println("****************************************************************");
+        this.console.println("****************************************************************");
     }
 
     public String getPlayersName() {
@@ -72,32 +79,32 @@ public class StartProgramView {
         while(!valid){//while a valid name has not been retrieved
             
             //prompt for the player's name
-            System.out.println("Enter the player's name below:");
+            this.console.println("Enter the player's name below:");
             
             //get the name from the keyboard and trim off the blanks
-            Scanner keyboard = new Scanner(System.in);
-            playersName = keyboard.nextLine();
+//            Scanner keyboard = new Scanner(System.in);
+            playersName = this.keyboard.readLine();
             playersName = playersName.trim();
             
             //if the name is invalid (less than two characters in length))
             if (playersName.length() < 2){
-                System.out.println("Invalid name - the name must be more than one character");
+                this.console.println("Invalid name - the name must be more than one character");
                 continue; //and repeats again
                 }
             break; //out of the (exit) the repetition
         }
         } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                this.console.println("Error reading input: " + e.getMessage());
                 }
         
         return playersName; // return the name
     }
 
     private void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n====================================");
-        System.out.println("\tWelcome to the game " + player.getName() + "!");
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("======================================");
+        this.console.println("\n\n====================================");
+        this.console.println("\tWelcome to the game " + player.getName() + "!");
+        this.console.println("\tWe hope you have a lot of fun!");
+        this.console.println("======================================");
         
     }
     

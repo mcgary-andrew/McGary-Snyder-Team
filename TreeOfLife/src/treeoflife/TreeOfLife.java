@@ -6,10 +6,8 @@
 package treeoflife;
 
 import byui.cit260.TreeOfLife.view.StartProgramView;
-import byui.cit260.TreeOfLife.model.ArmorItem;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Player;
-import byui.cit260.TreeOfLife.view.ArmorMenuView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,58 +28,6 @@ public class TreeOfLife {
     
     public static PrintWriter logFile = null;
 
-    public static PrintWriter getLogFile() {
-        return logFile;
-    }
-
-    public static void setLogFile(PrintWriter logFile) {
-        TreeOfLife.logFile = logFile;
-    }
-    
-    public static PrintWriter getOutFile() {
-        return outFile;
-    }
-
-    public static void setOutFile(PrintWriter outFile) {
-        TreeOfLife.outFile = outFile;
-    }
-
-    public static BufferedReader getInFile() {
-        return inFile;
-    }
-
-    public static void setInFile(BufferedReader inFile) {
-        TreeOfLife.inFile = inFile;
-    }
-    
-
-    public static Game getCurrentGame() {
-        return currentGame;
-    }
-
-    public static void setCurrentGame(Game currentGame) {
-        TreeOfLife.currentGame = currentGame;
-    }
-
-    public static Player getPlayer() {
-        return player;
-    }
-
-    public static void setPlayer(Player player) {
-        TreeOfLife.player = player;
-    }
-    
-    public static ArmorItem getArmorItem() {
-        return armorItem;
-    }
-
-    public static void setArmorItem(ArmorItem armorItem) {
-        TreeOfLife.armorItem = armorItem;
-    }
-//    public static Player player = null;
-    
-    public static ArmorItem armorItem = null;
-    
     public static void main(String[] args) {
         // create StartProgramView and start the game
         StartProgramView startProgramView = new StartProgramView();
@@ -128,17 +74,66 @@ public class TreeOfLife {
             }
         }
         
-        
-        
-        
-        ArmorMenuView armorMenuView = new ArmorMenuView();
-        try {
-        armorMenuView.checkArmor();
-        } catch (Throwable te){
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            armorMenuView.checkArmor();
-        }
-    }        
-} 
+//        ArmorMenuView armorMenuView = new ArmorMenuView();
+//        try {
+//        armorMenuView.checkArmor();
+//        } catch (Throwable te){
+//            System.out.println(te.getMessage());
+//            te.printStackTrace();
+//            armorMenuView.checkArmor();
+//        }
+    }  
+    
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
 
+    public static void setLogFile(PrintWriter logFile) {
+        TreeOfLife.logFile = logFile;
+    }
+    
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        TreeOfLife.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        TreeOfLife.inFile = inFile;
+    }
+    
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        TreeOfLife.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        TreeOfLife.player = player;
+    }
+    
+//    public static ArmorItem getArmorItem() {
+//        return armorItem;
+//    }
+//
+//    public static void setArmorItem(ArmorItem armorItem) {
+//        TreeOfLife.armorItem = armorItem;
+//    }
+////    public static Player player = null;
+//    
+//    public static ArmorItem armorItem = null;
+          
+} 

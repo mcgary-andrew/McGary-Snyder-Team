@@ -16,6 +16,7 @@ public class Location implements Serializable {
     private String armorQuestion;
     private ArmorItem armorObtained;
     private Scene scene;
+
     
         
     public int getSpaceNumber() {
@@ -85,10 +86,6 @@ public class Location implements Serializable {
     }
 
     void setColumn(int column) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setVisited(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
