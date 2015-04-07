@@ -193,18 +193,6 @@ public class MapControl {
    private static int moveActorToLocation(Actors actor, Map coordinates) throws MapControlException {
 //        Map map = TreeOfLife.getCurrentGame().getMap();
 //
-//        int newRow = coordinates.x ; //@todo removing -1 gets rid of error (location is outside the bounds of the map).  Why is it necessary? 
-//        int newColumn = coordinates.y ;
-//
-//        if (newRow < 0 || newRow >= map.getNumberOfRows()
-//                || newColumn < 0 || newColumn >= map.getNumberOfColumns()) {
-//            throw new MapControlException("Can not move actor to location "
-//                    + coordinates.x + ", " + coordinates.y
-//                    + " because that location is out of bounds "
-//                    + " for this game.");
-//        }
-//
-//        
 //        actor.getCoordinates().x = coordinates.x;
 //        actor.getCoordinates().y = coordinates.y;
 //        //set location as visited
