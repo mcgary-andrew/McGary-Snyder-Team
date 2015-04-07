@@ -36,8 +36,8 @@ public class GameControl {
         ArmorPiece[] armorPieces = new ArmorPiece[3];
         game.setArmorPieces(armorPieces);
         
-        Location[][] locations = MapControl.createMap();
-        game.setLocation(locations); //save map in game
+//        Location[][] locations = MapControl.createMap();
+//        game.setLocation(locations); //save map in game
       
         //move players to starting position in the map
         //MapControl.movePlayersToStartLocation(Map[1][1]);
