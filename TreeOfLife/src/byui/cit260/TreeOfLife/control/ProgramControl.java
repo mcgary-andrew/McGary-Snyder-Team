@@ -5,7 +5,6 @@
  */
 package byui.cit260.TreeOfLife.control;
 
-import byui.cit260.TreeOfLife.model.Actors;
 import byui.cit260.TreeOfLife.model.Player;
 import treeoflife.TreeOfLife;
 

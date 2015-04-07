@@ -24,7 +24,7 @@ public class GameMenuView extends View {
             + "\n-----------------------------------------"
             + "\nR - Resume" 
             + "\nS - Save"
-            + "\nM - Display Map" 
+//            + "\nM - Display Map" 
             + "\nA - Go to armor shop"
             + "\nE - Exit"
             + "\n-----------------------------------------");
@@ -44,14 +44,15 @@ public class GameMenuView extends View {
             case 'S': // Save
                 this.saveGame();
                 break;
-            case 'M':
-                this.displayMap();
-                break;
+//            case 'M':
+//                this.displayMap();
+//                break;
             case 'A': // Go to Armor Shop
                 this.displayAddArmorMenu();
                 break;
             case 'E': // Exit
-                return false;
+                this.returnMainMenuView(); 
+                break;
             default:
                 this.console.println("\n*** Invalid Selection ***");
                 break;
@@ -71,54 +72,58 @@ public class GameMenuView extends View {
         AddArmorMenu addArmorMenu = new AddArmorMenu();
         addArmorMenu.display();
     }
-
-    void displayMap() {
-        Location[][] locations = TreeOfLife.getCurrentGame().getMap().getLocations();
-
-        //DISPLAY title
-        System.out.println("Tree of Life Map");
-        //DISPLAY row of column numbers
-
-        System.out.println("\n | --0-- | --1-- | --2-- | --3-- | --4-- |");
-        for(int i = 0; i < locations.length; i++){
-//             DISPLAY row divider
-                System.out.println("--------------------------------");
-
-            String grid = i + "|";
-            for(int j = 0; j<locations[i].length; j++){
-                Location location = locations[i][j];
-
-                   String symbol;
-                   Point currentCoordinates= TreeOfLife.getCurrentGame().getActors().getCoordinates();
-                   Location characterLocation = locations[currentCoordinates.x] [currentCoordinates.y];
-                   Scene scene = new Scene();
-                   if(location == characterLocation) {
-                       symbol = "You Are Here!";
-                   }
-                   else if(scene.isVisited() ) { 
-                       //get current game
-                        
-                       symbol = scene.getMapSymbol();
-                    }
-                    else {
-                       symbol = "?????";
-                    }
-//                   DISPLAY column divider
-                     grid += ( " "+ symbol + " |");
-            }
-            System.out.println(grid);
-//            System.out.println("|");
-        }
-
-        // DISPLAY ending row divider  
-        System.out.println("--------------------------------");
-        
-       
-        
-        
-        //print out map menu
-    MapView mapView = new MapView(); 
-    mapView.display();
+    private void returnMainMenuView() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display(); 
     }
+
+//    void displayMap() {
+//        Location[][] locations = TreeOfLife.getCurrentGame().getMap().getLocations();
+//
+//        //DISPLAY title
+//        System.out.println("Tree of Life Map");
+//        //DISPLAY row of column numbers
+//
+//        System.out.println("\n | --0-- | --1-- | --2-- | --3-- | --4-- |");
+//        for(int i = 0; i < locations.length; i++){
+////             DISPLAY row divider
+//                System.out.println("--------------------------------");
+//
+//            String grid = i + "|";
+//            for(int j = 0; j<locations[i].length; j++){
+//                Location location = locations[i][j];
+//
+//                   String symbol;
+//                   Point currentCoordinates= TreeOfLife.getCurrentGame().getActors().getCoordinates();
+//                   Location characterLocation = locations[currentCoordinates.x] [currentCoordinates.y];
+//                   Scene scene = new Scene();
+//                   if(location == characterLocation) {
+//                       symbol = "You Are Here!";
+//                   }
+//                   else if(scene.isVisited() ) { 
+//                       //get current game
+//                        
+//                       symbol = scene.getMapSymbol();
+//                    }
+//                    else {
+//                       symbol = "?????";
+//                    }
+////                   DISPLAY column divider
+//                     grid += ( " "+ symbol + " |");
+//            }
+//            System.out.println(grid);
+////            System.out.println("|");
+//        }
+//
+//        // DISPLAY ending row divider  
+//        System.out.println("--------------------------------");
+//        
+//       
+//        
+//        
+//        //print out map menu
+//    MapView mapView = new MapView(); 
+//    mapView.display();
+//    }
     
 }

@@ -5,13 +5,7 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.MapControl;
-import byui.cit260.TreeOfLife.exceptions.MapControlException;
-import byui.cit260.TreeOfLife.model.Location;
-import byui.cit260.TreeOfLife.model.Scene;
-import java.awt.Point;
 import java.io.PrintWriter;
-import treeoflife.TreeOfLife;
 
 /**
  *

@@ -85,20 +85,20 @@ public class MainMenuView extends View{
         value = value.toUpperCase();
         char choice = value.charAt(0);
         
-        switch (value){
-            case "B":
+        switch (choice){
+            case 'B':
                 this.startNewGame();// Begin game
                 break;
-            case "G": // Get and start saved game
+            case 'G': // Get and start saved game
                 this.startExistingGame();
                 break;
-            case "H": // Help
+            case 'H': // Help
                 this.displayHelpMenu();
                 break;
-            case "S": //Save
+            case 'S': //Save
                 this.saveGame();
                 break;
-            case "E": // Exit
+            case 'E': // Exit
                 System.exit(0);
             default:
                 this.console.println("\n*** Invalid Selection ***");

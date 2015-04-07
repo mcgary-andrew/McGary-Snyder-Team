@@ -25,31 +25,36 @@ public class TreeOfLife {
     
     public static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
-    
     public static PrintWriter logFile = null;
 
     public static void main(String[] args) {
+        TreeOfLife obj = new TreeOfLife ();
+        obj.start (args);
+   
+}
+
+    
+    public  void start(String[] args)   {
         // create StartProgramView and start the game
-        StartProgramView startProgramView = new StartProgramView();
         
         try{
             // open character stream files for end user input and output
-            TreeOfLife.inFile = 
-                    new BufferedReader(new InputStreamReader(System.in));
+            TreeOfLife.inFile = new BufferedReader(new InputStreamReader(System.in));
             
             TreeOfLife.outFile = new PrintWriter(System.out, true);
             
             //open log file
             String filePath = "log.txt";
             TreeOfLife.logFile = new PrintWriter(filePath);
-            
+            StartProgramView startProgramView = new StartProgramView();
+
             try {
                 startProgramView.startProgram();
         
             } catch (Throwable te){
                 System.out.println(te.getMessage());
                 te.printStackTrace();
-                startProgramView.startProgram();
+                startProgramView.displayBanner();
             }
             
         }catch (Exception e) {
