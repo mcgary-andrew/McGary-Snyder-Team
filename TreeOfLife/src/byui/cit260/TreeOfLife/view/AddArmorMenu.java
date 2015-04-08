@@ -15,9 +15,9 @@ public class AddArmorMenu extends View {
             + "\n-----------------------------------------"
             + "\n| Add Armor Menu"
             + "\n-----------------------------------------"
-            + "\nF - Add Sheild of Faith"
-            + "\nS - Add Sword of God"
-            + "\nR - Add Breastplate of Righteousness"
+            + "\nF - Add Shield of Faith (Requires 25 Faith, 10 Knowledge, and 10 Obedience)"
+            + "\nS - Add Sword of God (Requires 10 Faith, 25 Knowledge, and 10 Obedience)"
+            + "\nR - Add Breastplate of Righteousness (Requires 10 Faith, 10 Knowledge, and 25 Obedience)"
             + "\nE - Exit"
             + "\n-----------------------------------------");
             }
@@ -26,20 +26,22 @@ public class AddArmorMenu extends View {
     @Override
     public boolean doAction(Object obj) {
         
-        char value = (char) obj;
+        String value = (String) obj;
         
         switch (value){
-            case 'F': // Begin game
+            case "F": // Begin game
                 this.addSofF();
                 break;
-            case 'S': // Help
+            case "S": // Help
                 this.addSofG();
                 break;
-            case 'R': //Save
+            case "R": //Save
                 this.addBofR();
                 break;
-            case 'E': // Exit
-                return false;
+            case "E": // Exit
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
+                break;
             default:
                 this.console.println("\n*** Invalid Selection ***");
                 break;
@@ -48,7 +50,7 @@ public class AddArmorMenu extends View {
     }
 
     private void addSofG() {
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.        
     }
 
     private void addBofR() {

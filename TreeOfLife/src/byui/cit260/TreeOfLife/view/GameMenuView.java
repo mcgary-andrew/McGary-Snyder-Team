@@ -22,11 +22,13 @@ public class GameMenuView extends View {
             + "\n-----------------------------------------"
             + "\n Game Menu"
             + "\n-----------------------------------------"
-            + "\nR - Resume" 
-            + "\nS - Save"
-//            + "\nM - Display Map" 
+            + "\nR - Resume game"
+            + "\nV - View player stats"
             + "\nA - Go to armor shop"
-            + "\nE - Exit"
+            + "\nM - Display map"
+            + "\nH - Help"
+            + "\nS - Save game"
+            + "\nE - Exit game without saving"
             + "\n-----------------------------------------");
     }
     
@@ -41,14 +43,22 @@ public class GameMenuView extends View {
             case 'R': // Resume Game
                 this.resumeGame();
                 break;
-            case 'S': // Save
-                this.saveGame();
+            case 'V': // Go to Actor Report View
+                ActorReportView actorReportView = new ActorReportView();
+                actorReportView.display();
                 break;
-//            case 'M':
-//                this.displayMap();
-//                break;
             case 'A': // Go to Armor Shop
                 this.displayAddArmorMenu();
+                break;
+            case 'M':
+                this.displayMap();
+                break;
+            case 'H':
+                HelpMenuView helpMenuView = new HelpMenuView();
+                helpMenuView.display();
+                break;
+            case 'S': // Save
+                this.saveGame();
                 break;
             case 'E': // Exit
                 this.returnMainMenuView(); 
@@ -60,18 +70,26 @@ public class GameMenuView extends View {
         return true;
     }
     
-    private void saveGame() {
-       this.console.println("*** saveGame function called ***");
-    }
-
     private void resumeGame() {
         this.console.println("*** resumeGame function called ***");
     }
-
+ 
     private void displayAddArmorMenu() {
         AddArmorMenu addArmorMenu = new AddArmorMenu();
         addArmorMenu.display();
     }
+    
+    private void saveGame() {
+       this.console.println("*** saveGame function called ***");
+    }
+
+    private void displayMap(){
+       this.console.println("This function is not yet implemented.");
+       GameMenuView gameMenuView = new GameMenuView();
+       gameMenuView.display();
+    }
+
+
     private void returnMainMenuView() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display(); 

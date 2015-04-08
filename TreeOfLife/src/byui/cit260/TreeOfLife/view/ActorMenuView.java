@@ -22,7 +22,6 @@ public class ActorMenuView extends View {
             + "\nL - Lehi"
             + "\nN - Nephi"
             + "\nS - Sam"
-            + "\nR - Report"
             + "\nE - Exit"
             + "\n-----------------------------------------");
     }
@@ -43,9 +42,6 @@ public class ActorMenuView extends View {
             case "N": //Nephi
                 this.createActor("N");
                 break;
-            case "R": //print report
-                this.createReport();
-                break;
             case "E": // Exit
                 MainMenuView mainMenuView = new MainMenuView();
                 mainMenuView.display();
@@ -61,19 +57,24 @@ public class ActorMenuView extends View {
     private void createActor(String actor) {
         if (actor == "L") {
             TreeOfLife.currentGame.setActors(Actors.getLehi());
+            TreeOfLife.currentGame.setFaith(5);
+            TreeOfLife.currentGame.setKnowledge(10);
+            TreeOfLife.currentGame.setObedience(5);
         }
         else if (actor == "S"){
             TreeOfLife.currentGame.setActors(Actors.getSam());
+            TreeOfLife.currentGame.setFaith(5);
+            TreeOfLife.currentGame.setKnowledge(5);
+            TreeOfLife.currentGame.setObedience(10);
         }
         else if (actor == "N"){
             TreeOfLife.currentGame.setActors(Actors.getNephi());
+            TreeOfLife.currentGame.setFaith(10);
+            TreeOfLife.currentGame.setKnowledge(5);
+            TreeOfLife.currentGame.setObedience(5);
         }
-        MapView mapView = new MapView();
-        mapView.display();
-    }
-
-    private void createReport() {
-        ActorReportView arv = new ActorReportView();
+        ActorReportView ARView = new ActorReportView();
+        ARView.display();
     }
 
 }

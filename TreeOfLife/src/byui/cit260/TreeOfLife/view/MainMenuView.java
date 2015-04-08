@@ -25,8 +25,6 @@ public class MainMenuView extends View{
             + "\n-----------------------------------------"
             + "\nB - Begin New Game"
             + "\nG - Get and Start saved game"
-            + "\nH - Help"
-            + "\nS - Save"
             + "\nE - Exit"
             + "\n-----------------------------------------");
     }
@@ -62,23 +60,18 @@ public class MainMenuView extends View{
         gameMenu.display();
     }
 
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
-    }
-
-    private void saveGame() {
-       this.console.println("\n\nEnter the file path for file where the game"
-            + "is to be saved.");
-       String filePath = this.getInput();
-       
-       try{
-           //save the game to the specified file
-           GameControl.saveGame(TreeOfLife.getCurrentGame(), filePath);
-       }catch (Exception ex) {
-           ErrorView.display("MainMenuView", ex.getMessage());
-       }
-    }
+//    private void saveGame() {
+//       this.console.println("\n\nEnter the file path for file where the game"
+//            + "is to be saved.");
+//       String filePath = this.getInput();
+//       
+//       try{
+//           //save the game to the specified file
+//           GameControl.saveGame(TreeOfLife.getCurrentGame(), filePath);
+//       }catch (Exception ex) {
+//           ErrorView.display("MainMenuView", ex.getMessage());
+//       }
+//    }
    @Override
     public boolean doAction(Object obj) {
 
@@ -92,12 +85,6 @@ public class MainMenuView extends View{
                 break;
             case 'G': // Get and start saved game
                 this.startExistingGame();
-                break;
-            case 'H': // Help
-                this.displayHelpMenu();
-                break;
-            case 'S': //Save
-                this.saveGame();
                 break;
             case 'E': // Exit
                 System.exit(0);
