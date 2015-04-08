@@ -5,9 +5,13 @@
  */
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.control.GameControl;
+import byui.cit260.TreeOfLife.exceptions.GameControlException;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Scene;
 import java.awt.Point;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import treeoflife.TreeOfLife;
 
 /**
@@ -27,6 +31,7 @@ public class GameMenuView extends View {
             + "\nA - Go to armor shop"
             + "\nM - Display map"
             + "\nH - Help"
+            + "\nL - Load game"
             + "\nS - Save game"
             + "\nE - Exit game without saving"
             + "\n-----------------------------------------");
@@ -42,7 +47,7 @@ public class GameMenuView extends View {
         switch (select){
             case 'R': // Resume Game
                 this.resumeGame();
-                break;
+                break;    
             case 'V': // Go to Actor Report View
                 ActorReportView actorReportView = new ActorReportView();
                 actorReportView.display();
@@ -57,8 +62,25 @@ public class GameMenuView extends View {
                 HelpMenuView helpMenuView = new HelpMenuView();
                 helpMenuView.display();
                 break;
-            case 'S': // Save
-                this.saveGame();
+            case 'L': 
+            {
+                try {
+                // Resume Game
+                    this.loadGame();
+                } catch (GameControlException ex) {
+                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                break;
+            case 'S': 
+            {
+                try {
+                    // Save
+                    this.saveGame();
+                } catch (GameControlException ex) {
+                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
                 break;
             case 'E': // Exit
                 this.returnMainMenuView(); 
@@ -70,17 +92,43 @@ public class GameMenuView extends View {
         return true;
     }
     
-    private void resumeGame() {
-        this.console.println("*** resumeGame function called ***");
+    private void loadGame() throws GameControlException {
+        this.console.println("\n\nEnter the file path for the file where the game"
+        + "is saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            //start a saved game
+            GameControl.getSavedGame(filePath);
+         }catch (Exception ex) {
+             ErrorView.display("MainMenuView", ex.getMessage());
+         }
     }
  
+    private void resumeGame() {
+        MapView mapView = new MapView();
+        mapView.display();
+    }
+    
+    
     private void displayAddArmorMenu() {
         AddArmorMenu addArmorMenu = new AddArmorMenu();
         addArmorMenu.display();
     }
     
-    private void saveGame() {
-       this.console.println("*** saveGame function called ***");
+    
+    private void saveGame() throws GameControlException {
+      this.console.println("\n\nEnter the file path for file where the game"
+            + "is to be saved.");
+       String filePath = this.getInput();
+       
+       try{
+           //save the game to the specified file
+           GameControl.saveGame(TreeOfLife.getCurrentGame(), filePath);
+       }catch (Exception ex) {
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
     }
 
     private void displayMap(){
