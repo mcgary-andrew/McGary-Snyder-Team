@@ -5,17 +5,12 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.GameControl;
-import byui.cit260.TreeOfLife.control.MapControl;
 import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Question;
 import byui.cit260.TreeOfLife.model.QuestionArray;
 import byui.cit260.TreeOfLife.model.Scene;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import treeoflife.TreeOfLife;
 
 /**
  *
@@ -23,7 +18,7 @@ import treeoflife.TreeOfLife;
  */
 public class LocationView extends View {
     
-    private QuestionArray question;
+    public final QuestionArray question;
     private Location[][] location;
     private Location currentLocation;
     int currentXLocation;
@@ -43,16 +38,17 @@ public class LocationView extends View {
         question = new QuestionArray();
         currentXLocation = 0;
         currentYLocation = 0;
-        this.updateCurrentLocation();
+//        this.updateCurrentLocation();
        
     }
 
-    public void updateCurrentLocation(){
-        currentLocation = location[currentXLocation][currentYLocation];
-    }
+//    public void updateCurrentLocation(){
+//        currentLocation = location[currentXLocation][currentYLocation];
+//    }
     
    @Override
     public boolean doAction(Object obj) {
+        currentLocation = location[currentXLocation][currentYLocation];
         Scene scene = currentLocation.getScene();
         Question locQuestion = currentLocation.getQuestion();
         

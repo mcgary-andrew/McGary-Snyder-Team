@@ -35,22 +35,24 @@ public class MapView extends View {
     public boolean doAction(Object obj) {
         String value = (String) obj;
         value = value.toUpperCase();
-                
-        switch (value){
-            case "A": // Answer Question
-               LocationView locationView = null;
-        try {
-            locationView = new LocationView();
-        } catch (MapControlException ex) {
-            Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-               locationView.display();
+        char selection = value.charAt(0);
+        LocationView locationView = null;        
+        switch (selection){
+            case 'A': {
+            try {
+                // Answer Question
+                locationView = new LocationView();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            locationView.display();
                 return true;
-            case "G": // Go to game menu
+            }
+            case 'G': // Go to game menu
                 GameMenuView gameMenu = new GameMenuView();
                 gameMenu.display();
                 break;
-            case "E": // Exit
+            case 'E': // Exit
                 MainMenuView mainMenuView = new MainMenuView();
                 mainMenuView.display();
                 break;
