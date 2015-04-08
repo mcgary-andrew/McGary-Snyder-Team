@@ -59,7 +59,7 @@ public class GameControl {
         }
     }
     public static void getSavedGame(String filepath)
-        throws GameControlException {
+                    throws GameControlException {
         Game game = null;
         try( FileInputStream fips = new FileInputStream(filepath)){
             ObjectInputStream output = new ObjectInputStream(fips);

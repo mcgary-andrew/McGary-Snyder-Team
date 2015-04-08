@@ -60,18 +60,18 @@ public class MainMenuView extends View{
         gameMenu.display();
     }
 
-//    private void saveGame() {
-//       this.console.println("\n\nEnter the file path for file where the game"
-//            + "is to be saved.");
-//       String filePath = this.getInput();
-//       
-//       try{
-//           //save the game to the specified file
-//           GameControl.saveGame(TreeOfLife.getCurrentGame(), filePath);
-//       }catch (Exception ex) {
-//           ErrorView.display("MainMenuView", ex.getMessage());
-//       }
-//    }
+    private void saveGame() {
+       this.console.println("\n\nEnter the file path for file where the game"
+            + "is to be saved.");
+       String filePath = this.getInput();
+       
+       try{
+           //save the game to the specified file
+           GameControl.saveGame(TreeOfLife.getCurrentGame(), filePath);
+       }catch (Exception ex) {
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
+    }
    @Override
     public boolean doAction(Object obj) {
 
