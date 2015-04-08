@@ -63,10 +63,10 @@ public class ActorMenuView extends View {
             TreeOfLife.currentGame.setActors(Actors.getLehi());
         }
         else if (actor == "S"){
-            TreeOfLife.setActors(Actors.getSam());
+            TreeOfLife.currentGame.setActors(Actors.getSam());
         }
         else if (actor == "N"){
-            TreeOfLife.setActors(Actors.getNephi());
+            TreeOfLife.currentGame.setActors(Actors.getNephi());
         }
         MapView mapView = new MapView();
         mapView.display();
