@@ -190,19 +190,9 @@ public class MapControl {
        
    }
 
-   private static int moveActorToLocation(Actors actor, Map coordinates) throws MapControlException {
-//        Map map = TreeOfLife.getCurrentGame().getMap();
-//
-//        actor.getCoordinates().x = coordinates.x;
-//        actor.getCoordinates().y = coordinates.y;
-//        //set location as visited
-//        Location location = map.getLocations()[coordinates.x][coordinates.y];
-//        location.setVisited(true);
-//         //if moves to new level then setCurrentLevel
-//        MapControl setLevel = new MapControl();
-//        setLevel.setCurrentLevel(location);
-//
-    return 0;
+   private static int moveActorToLocation(Actors actor, Map location) throws MapControlException {
+        Map map = TreeOfLife.getCurrentGame().getMap();
+        return 0;
     }
     public double calcEndLevel(double faithValue, double obedienceValue, double knowledgeValue, double sOfFValue, double sWOfGValue, double bOfRValue)
                     throws InventoryControlException{

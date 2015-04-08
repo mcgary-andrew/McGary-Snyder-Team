@@ -12,9 +12,23 @@ package byui.cit260.TreeOfLife.model;
 public class QuestionArray {
     
     private static Question[][] locQuestArray;
+    private Scene scene;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
     
 
     public QuestionArray() {
+        this.createLocationQuestionArray();
+    }
+
+    public Question getNextLocationQuestion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public enum QuestionType {
         faith,
@@ -23,7 +37,7 @@ public class QuestionArray {
     }
     
     private Question[][] createLocationQuestionArray() {
-         locQuestArray = new Question[4][21];
+         locQuestArray = new Question[4][25];
          
         Question locQuest1 = new Question();
         locQuest1.setQuestion("How many commandments has the Lord given without a way prepared to accomplish them?");

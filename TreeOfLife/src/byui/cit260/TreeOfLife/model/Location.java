@@ -12,11 +12,37 @@ import java.util.Objects;
  * @author Krystal
  */
 public class Location implements Serializable {
-    private int spaceNumber;
+    private int row;
+    private int column;
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
     private String armorQuestion;
     private ArmorItem armorObtained;
     private Scene scene;
     private Question question;
+    private Actors[] actor;
+
+    public Actors[] getActor() {
+        return actor;
+    }
+
+    public void setActor(Actors[] actor) {
+        this.actor = actor;
+    }
 
     public Question getQuestion() {
         return question;
@@ -24,16 +50,6 @@ public class Location implements Serializable {
 
     public void setQuestion(Question question) {
         this.question = question;
-    }
-
-    
-        
-    public int getSpaceNumber() {
-        return spaceNumber;
-    }
-
-    public void setSpaceNumber(int spaceNumber) {
-        this.spaceNumber = spaceNumber;
     }
 
     public String getArmorQuestion() {
@@ -63,7 +79,8 @@ public class Location implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 53 * hash + this.spaceNumber;
+        hash = 53 * hash + this.row;
+        hash = 53 * hash + this.column;
         hash = 53 * hash + Objects.hashCode(this.armorQuestion);
         hash = 53 * hash + Objects.hashCode(this.armorObtained);
         hash = 53 * hash + Objects.hashCode(this.scene);
@@ -79,7 +96,7 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        if (this.spaceNumber != other.spaceNumber) {
+        if (this.row != other.row) {
             return false;
         }
         if (!Objects.equals(this.armorQuestion, other.armorQuestion)) {
@@ -93,17 +110,4 @@ public class Location implements Serializable {
         }
         return true;
     }
-
-    void setColumn(int column) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setRow(int row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-
-    
-    
-    
 }
