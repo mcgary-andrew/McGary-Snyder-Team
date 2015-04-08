@@ -12,6 +12,8 @@ import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Scene;
 import byui.cit260.TreeOfLife.model.Map;
+import byui.cit260.TreeOfLife.model.Question;
+import byui.cit260.TreeOfLife.model.QuestionArray;
 import java.awt.image.BufferedImage;
 import treeoflife.TreeOfLife;
 

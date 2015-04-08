@@ -5,6 +5,7 @@
  */
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.control.MapControl;
 import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
@@ -18,52 +19,40 @@ import byui.cit260.TreeOfLife.model.Scene;
  */
 public class LocationView extends View {
     
-    public final QuestionArray question;
-    private Location[][] location;
-    private Location currentLocation;
-    int currentXLocation;
-    int currentYLocation;
+    public final QuestionArray questions;
 
-    public Location getCurrentLocation() {
-        return currentLocation;
-    }
-
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
-    }
-     
-    public LocationView() throws MapControlException{
+    public LocationView(){
         super("\n");
-        Map map = new Map(5, 5);
-        question = new QuestionArray();
-        currentXLocation = 0;
-        currentYLocation = 0;
-//        this.updateCurrentLocation();
-       
+        questions = new QuestionArray();
+        Scene scene = questions.getScene();
+        Question locQuestion = questions.getCurrentQuestion();
+        this.setPromptMessage(locQuestion.getQuestion() + "\n" + locQuestion.getPossibleAnswers());
+        
+
     }
 
-//    public void updateCurrentLocation(){
-//        currentLocation = location[currentXLocation][currentYLocation];
-//    }
     
    @Override
     public boolean doAction(Object obj) {
-        currentLocation = location[currentXLocation][currentYLocation];
-        Scene scene = currentLocation.getScene();
-        Question locQuestion = currentLocation.getQuestion();
         
-        System.out.printf("Location: %d %d", currentXLocation, currentYLocation );
-        System.out.println(scene.getDescription());
-        System.out.println(locQuestion.getQuestion());
-            
+//        Scene scene = questions.getScene();
+        Question locQuestion = questions.getCurrentQuestion();
+//
+////        System.out.printf("Location: %d %d", currentXLocation, currentYLocation );
+//        System.out.println(scene.getDescription());
+//        System.out.println(locQuestion.getQuestion());
+        
         String value = (String) obj;
         
         if (value.equals(locQuestion.getAnswerLevelQuestion())){
               System.out.println("Correct!!");
+
         }else{
             System.out.println("Wrong");
         }
-        return true;
+        MapView mapView = new MapView();
+        mapView.display();
+        return false;
         }
     
     

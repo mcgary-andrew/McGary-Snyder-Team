@@ -18,9 +18,25 @@ public class Scene implements Serializable{
     private boolean visited;
     private int answeredCorrectlyQuestions;
     private Scene scene;
-    private Actors actor;
     private String mapSymbol;
     private Boolean blocked;
+    private QuestionArray[][] questions;
+
+    public String getSceneType() {
+        return sceneType;
+    }
+
+    public void setSceneType(String sceneType) {
+        this.sceneType = sceneType;
+    }
+
+    public QuestionArray[][] getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(QuestionArray[][] questions) {
+        this.questions = questions;
+    }
     
     
     public String getMapSymbol() {
@@ -48,15 +64,6 @@ public class Scene implements Serializable{
     public void setScene(Scene scene) {
         this.scene = scene;
     }
-
-    public Actors getActor() {
-        return actor;
-    }
-
-    public void setActor(Actors actor) {
-        this.actor = actor;
-    }
-    
 
     public Scene() {
     }  

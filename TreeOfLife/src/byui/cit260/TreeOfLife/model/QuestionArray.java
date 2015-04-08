@@ -5,14 +5,53 @@
  */
 package byui.cit260.TreeOfLife.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Andrew
  */
-public class QuestionArray {
+public class QuestionArray implements Serializable{
     
     private static Question[][] locQuestArray;
     private Scene scene;
+    private static String[][] questionArray;
+    private static Location[][] location;
+    int currentXLocation;
+    int currentYLocation;
+    private Question currentQuestion;
+
+    public Question getCurrentQuestion() {
+        return currentQuestion;
+    }
+
+    public void setCurrentQuestion(Question currentQuestion) {
+        this.currentQuestion = currentQuestion;
+    }
+
+    public static Location[][] getLocation() {
+        return location;
+    }
+
+    public static void setLocation(Location[][] location) {
+        QuestionArray.location = location;
+    }
+
+    public static Question[][] getLocQuestArray() {
+        return locQuestArray;
+    }
+
+    public static void setLocQuestArray(Question[][] locQuestArray) {
+        QuestionArray.locQuestArray = locQuestArray;
+    }
+
+    public static String[][] getQuestionArray() {
+        return questionArray;
+    }
+
+    public static void setQuestionArray(String[][] questionArray) {
+        QuestionArray.questionArray = questionArray;
+    }
 
     public Scene getScene() {
         return scene;
@@ -24,12 +63,23 @@ public class QuestionArray {
     
 
     public QuestionArray() {
+        questionArray = new String[3][25];
         this.createLocationQuestionArray();
+        currentXLocation = 0;
+        currentYLocation = 0;
+        this.updateCurrentLocation();
     }
 
-    public Question getNextLocationQuestion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateCurrentLocation(){
+        currentQuestion = locQuestArray[currentXLocation][currentYLocation];
     }
+    
+    public Question getNextLocationQuestion() {
+        
+        this.updateCurrentLocation();
+        return currentQuestion;
+    }
+    
     public enum QuestionType {
         faith,
         knowledge,
@@ -37,7 +87,7 @@ public class QuestionArray {
     }
     
     private Question[][] createLocationQuestionArray() {
-         locQuestArray = new Question[4][25];
+         locQuestArray = new Question[3][25];
          
         Question locQuest1 = new Question();
         locQuest1.setQuestion("How many commandments has the Lord given without a way prepared to accomplish them?");

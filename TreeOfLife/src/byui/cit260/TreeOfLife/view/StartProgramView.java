@@ -47,7 +47,7 @@ public class StartProgramView {
         System.out.println("*                                                              *"
                 + "\n* In this game you will have the opportunity to choose between *"
                 + "\n* three characters to embark on a journey to the Tree of Life. *"
-                + "\n* Your journey will begin in the land of Lehi's Drea, taking   *"
+                + "\n* Your journey will begin in the land of Lehi's Dream, taking   *"
                 + "\n* you through different environments from the desert, to the   *"
                 + "\n* forest, across rivers, through mountains in hopes of         *"
                 + "\n* reaching your final destination, The Tree of Life.           *");

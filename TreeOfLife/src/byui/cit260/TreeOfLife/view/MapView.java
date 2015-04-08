@@ -36,18 +36,13 @@ public class MapView extends View {
         String value = (String) obj;
         value = value.toUpperCase();
         char selection = value.charAt(0);
-        LocationView locationView = null;        
+                
         switch (selection){
-            case 'A': {
-            try {
-                // Answer Question
+            case 'A': // Answer Question
+                LocationView locationView = null;
                 locationView = new LocationView();
-            } catch (MapControlException ex) {
-                Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            locationView.display();
-                return true;
-            }
+                locationView.display();
+                break;
             case 'G': // Go to game menu
                 GameMenuView gameMenu = new GameMenuView();
                 gameMenu.display();
@@ -66,6 +61,21 @@ public class MapView extends View {
     private void answerLocationQuestion() {
         
         QuestionArray locationQuestion = new QuestionArray();
+        Question question = locationQuestion.getNextLocationQuestion();
+        String nextQuestion = question.getQuestion();
+        String possibleAnswers = question.getPossibleAnswers();
+        this.console.println(nextQuestion + possibleAnswers);
+        
+        String response = this.getInput();
+        String answerToQuestion = question.getAnswerLevelQuestion();
+        String userResponse = response.toUpperCase();
+        String answer = answerToQuestion.toUpperCase();
+        
+        if(userResponse.equals(answer)){
+            this.console.println("Correct");
+        }else {
+            this.console.println("Incorrect");
+        }
         
         }
     private String locationQuestionInput() {
