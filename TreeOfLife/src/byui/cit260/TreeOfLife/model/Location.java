@@ -16,6 +16,15 @@ public class Location implements Serializable {
     private String armorQuestion;
     private ArmorItem armorObtained;
     private Scene scene;
+    private Question question;
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
 
     
         
