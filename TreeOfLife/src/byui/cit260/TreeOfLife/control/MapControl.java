@@ -134,8 +134,8 @@ public class MapControl {
         Actors[] actors = Actors.values();
         
         for (Actors actor : actors){
-            Map coordinates = actor.getCoordinates();
-            MapControl.moveActorToLocation(actor, coordinates);
+            //Map coordinates = actor.getCoordinates();
+            //MapControl.moveActorToLocation(actor, coordinates);
         }
         return 0;      
        

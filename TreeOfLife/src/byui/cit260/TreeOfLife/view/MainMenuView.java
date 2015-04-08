@@ -41,6 +41,7 @@ public class MainMenuView extends View{
         //display the game menu
         ActorMenuView actorMenuView = new ActorMenuView();
         actorMenuView.display();
+        
     }
     
     private void startExistingGame() {

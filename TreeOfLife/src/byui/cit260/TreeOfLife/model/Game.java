@@ -29,14 +29,14 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public Actors[] getActors() {
+    public Actors getActors() {
         return actors;
     }
 
-    public void setActors(Actors[] actors) {
+    public void setActors(Actors actors) {
         this.actors = actors;
     }
-        private Actors[] actors;
+        private Actors actors;
 
         
         

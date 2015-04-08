@@ -60,7 +60,7 @@ public class ActorMenuView extends View {
 
     private void createActor(String actor) {
         if (actor == "L") {
-            TreeOfLife.setActors(Actors.getLehi());
+            TreeOfLife.currentGame.setActors(Actors.getLehi());
         }
         else if (actor == "S"){
             TreeOfLife.setActors(Actors.getSam());

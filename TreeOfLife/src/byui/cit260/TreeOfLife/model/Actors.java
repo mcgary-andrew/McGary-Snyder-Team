@@ -10,14 +10,14 @@ import java.util.Objects;
  */
 public enum Actors implements Serializable{
     
-       
-    
     Lehi("He is the Prophet and leader of the family."),
     Nephi("Faithful son and later the prophet leader of the Nephites."),
     Sam("The youngest boy and faithful brother of Nephi.");
     
     //class instance variables
     private final String description;
+
+    
     //private final Map coordinates;
     private ArmorPiece[] armor;
 
@@ -33,6 +33,7 @@ public enum Actors implements Serializable{
     this.description = description;
     //coordinates = new Map(1,1);
     }
+    
     public static Actors getLehi() {
         return Lehi;
     }

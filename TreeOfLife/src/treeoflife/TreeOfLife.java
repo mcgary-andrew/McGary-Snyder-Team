@@ -21,13 +21,14 @@ import java.io.PrintWriter;
  */
 public class TreeOfLife {
 
-    private static Game currentGame = null;
+    public static Game currentGame = null;
     public static Player player = null;
     private static Actors actors = null;
     
     public static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     public static PrintWriter logFile = null;
+    
 
     public static void main(String[] args) {
         TreeOfLife obj = new TreeOfLife ();
