@@ -13,12 +13,8 @@ import java.io.PrintWriter;
  */
 public class MapView extends View {
 
-    MapView(String promptMessage) {
-        super(promptMessage);
-    }
-
     MapView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super("");
     }
 
     @Override
