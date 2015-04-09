@@ -92,7 +92,7 @@ public class QuestionArray implements Serializable{
     }
     
     private Question[][] createLocationQuestionArray() {
-         locQuestArray = new Question[8][8];
+         locQuestArray = new Question[24][24];
          
         Question locQuest1 = new Question();
         locQuest1.setQuestion("How many commandments has the Lord given without a way prepared to accomplish them?");
