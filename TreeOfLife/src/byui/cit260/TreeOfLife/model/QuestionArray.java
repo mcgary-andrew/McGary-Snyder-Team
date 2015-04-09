@@ -75,9 +75,13 @@ public class QuestionArray implements Serializable{
     }
     
     public Question getNextLocationQuestion() {
-        
+        this.updateXAndY();
         this.updateCurrentLocation();
         return currentQuestion;
+    }
+    
+    public void updateXAndY(){
+        this.currentYLocation++;
     }
     
     public enum QuestionType {
@@ -105,7 +109,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Friends");
         locQuest2.setAnswerLevelQuestion("B");
         locQuest2.setAttributeAmount(0, 0, 5);
-        locQuestArray[QuestionType.obedience.ordinal()][1] = locQuest2;
+        locQuestArray[QuestionType.obedience.ordinal()][0] = locQuest2;
         
         Question locQuest3 = new Question();
         locQuest3.setQuestion("People are free to choose liberty and _____ or captivity and ______. (Fill in the blanks)");
@@ -114,7 +118,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Equality, Restriction");
         locQuest3.setAnswerLevelQuestion("A");
         locQuest3.setAttributeAmount(1, 4, 0);
-        locQuestArray[QuestionType.knowledge.ordinal()][2] = locQuest3;
+        locQuestArray[QuestionType.knowledge.ordinal()][0] = locQuest3;
         
         Question locQuest4 = new Question();
         locQuest4.setQuestion("When is learning and wisdom foolishness?");
@@ -123,7 +127,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - When you don't listen to God");
         locQuest4.setAnswerLevelQuestion("C");
         locQuest4.setAttributeAmount(2, 1, 2);
-        locQuestArray[QuestionType.knowledge.ordinal()][3] = locQuest4;
+        locQuestArray[QuestionType.knowledge.ordinal()][1] = locQuest4;
          
          Question locQuest5 = new Question();
         locQuest5.setQuestion("What are we saved by?");
@@ -132,7 +136,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Grace, after all we can do");
         locQuest5.setAnswerLevelQuestion("C");
         locQuest5.setAttributeAmount(1, 1, 3);
-        locQuestArray[QuestionType.obedience.ordinal()][4] = locQuest5;
+        locQuestArray[QuestionType.obedience.ordinal()][1] = locQuest5;
         
          Question locQuest6 = new Question();
         locQuest6.setQuestion("Eat, drink, and be merry, for tomorrow we die.  God says that...");
@@ -141,7 +145,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - This is just fine");
         locQuest6.setAnswerLevelQuestion("A");
         locQuest6.setAttributeAmount(2, 2, 1);
-        locQuestArray[QuestionType.obedience.ordinal()][5] = locQuest6;
+        locQuestArray[QuestionType.obedience.ordinal()][2] = locQuest6;
         
          Question locQuest7 = new Question();
         locQuest7.setQuestion("We need steadfast faith in Christ, hope, and a love of God and all men. How long do we have to keep this up for?");
@@ -150,7 +154,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Only on Sundays");
         locQuest7.setAnswerLevelQuestion("B");
         locQuest7.setAttributeAmount(2, 2, 1);
-        locQuestArray[QuestionType.obedience.ordinal()][6] = locQuest7;
+        locQuestArray[QuestionType.obedience.ordinal()][3] = locQuest7;
         
         Question locQuest8 = new Question();
         locQuest8.setQuestion("The words of Christ will tell ____ all things...(to) do. (Fill in the blank)");
@@ -159,7 +163,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Everyone else");
         locQuest8.setAnswerLevelQuestion("B");
         locQuest8.setAttributeAmount(1, 0, 4);
-        locQuestArray[QuestionType.knowledge.ordinal()][7] = locQuest8;
+        locQuestArray[QuestionType.knowledge.ordinal()][2] = locQuest8;
         
         Question locQuest9 = new Question();
         locQuest9.setQuestion("What is the first thing we should do before performing anything for the Lord?");
@@ -168,7 +172,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Go to church");
         locQuest9.setAnswerLevelQuestion("A");
         locQuest9.setAttributeAmount(3, 2, 0);
-        locQuestArray[QuestionType.faith.ordinal()][8] = locQuest9;
+        locQuestArray[QuestionType.faith.ordinal()][1] = locQuest9;
         
         Question locQuest10 = new Question();
         locQuest10.setQuestion("What is one way you can serve God?");
@@ -177,7 +181,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Serve Others");
         locQuest10.setAnswerLevelQuestion("C");
         locQuest10.setAttributeAmount(1, 3, 1);
-        locQuestArray[QuestionType.obedience.ordinal()][9] = locQuest10;
+        locQuestArray[QuestionType.obedience.ordinal()][4] = locQuest10;
         
         Question locQuest11 = new Question();
         locQuest11.setQuestion("Who should we become like if we want to become a saint?");
@@ -186,7 +190,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - The Prophet");
         locQuest11.setAnswerLevelQuestion("A");
         locQuest11.setAttributeAmount(2, 3, 0);
-        locQuestArray[QuestionType.obedience.ordinal()][10] = locQuest11;
+        locQuestArray[QuestionType.obedience.ordinal()][5] = locQuest11;
         
         Question locQuest12 = new Question();
         locQuest12.setQuestion("How do we protect ourselves from all the various ways of committing sin?");
@@ -195,7 +199,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Watch yourself");
         locQuest12.setAnswerLevelQuestion("C");
         locQuest12.setAttributeAmount(0, 3, 2);
-        locQuestArray[QuestionType.obedience.ordinal()][11] = locQuest12;
+        locQuestArray[QuestionType.obedience.ordinal()][6] = locQuest12;
         
         Question locQuest13 = new Question();
         locQuest13.setQuestion("Why did Jesus suffer for us?");
@@ -204,7 +208,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - To protect only a chosen few");
         locQuest13.setAnswerLevelQuestion("B");
         locQuest13.setAttributeAmount(2, 1, 2);
-        locQuestArray[QuestionType.knowledge.ordinal()][12] = locQuest13;
+        locQuestArray[QuestionType.knowledge.ordinal()][3] = locQuest13;
         
         Question locQuest14 = new Question();
         locQuest14.setQuestion("Faith is to hope for things which are not seen, which are _____. (Fill in the blank)");
@@ -213,7 +217,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Beliefs");
         locQuest14.setAnswerLevelQuestion("A"); 
         locQuest14.setAttributeAmount(5, 0, 0);
-        locQuestArray[QuestionType.faith.ordinal()][13] = locQuest14;
+        locQuestArray[QuestionType.faith.ordinal()][2] = locQuest14;
         
         Question locQuest15 = new Question();
         locQuest15.setQuestion("When is the best time to learn to keep the commandments?");
@@ -222,7 +226,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - In our youth");
         locQuest15.setAnswerLevelQuestion("C");
         locQuest15.setAttributeAmount(0, 5, 0);
-        locQuestArray[QuestionType.obedience.ordinal()][14] = locQuest15;
+        locQuestArray[QuestionType.obedience.ordinal()][7] = locQuest15;
         
         Question locQuest16 = new Question();
         locQuest16.setQuestion("What should people do who are struggling with lust?");
@@ -231,7 +235,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Read more scriptures");
         locQuest16.setAnswerLevelQuestion("B");
         locQuest16.setAttributeAmount(4, 0, 1);
-        locQuestArray[QuestionType.faith.ordinal()][15] = locQuest16;
+        locQuestArray[QuestionType.faith.ordinal()][3] = locQuest16;
         
         Question locQuest17 = new Question();
         locQuest17.setQuestion("Wickedness never was ____. (Fill in the blank)");
@@ -240,7 +244,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - The best way to go");
         locQuest17.setAnswerLevelQuestion("A");
         locQuest17.setAttributeAmount(1, 3, 1);
-        locQuestArray[QuestionType.obedience.ordinal()][16] = locQuest17;
+        locQuestArray[QuestionType.obedience.ordinal()][8] = locQuest17;
         
         Question locQuest18 = new Question();
         locQuest18.setQuestion("Where should we build our foundation?");
@@ -249,7 +253,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - On a rock");
         locQuest18.setAnswerLevelQuestion("C");
         locQuest18.setAttributeAmount(3, 2, 0);
-        locQuestArray[QuestionType.faith.ordinal()][17] = locQuest18;
+        locQuestArray[QuestionType.faith.ordinal()][4] = locQuest18;
         
         Question locQuest19 = new Question();
         locQuest19.setQuestion("We should be as perfect as _____. (Fill in the blank)");
@@ -258,7 +262,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Jesus and Heavenly Father");
         locQuest19.setAnswerLevelQuestion("C");
         locQuest19.setAttributeAmount(1, 2, 2);
-        locQuestArray[QuestionType.obedience.ordinal()][18] = locQuest19;
+        locQuestArray[QuestionType.obedience.ordinal()][9] = locQuest19;
         
         Question locQuest20 = new Question();
         locQuest20.setQuestion("Who is it most important that we pray for to be blessed?");
@@ -267,7 +271,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Other church members");
         locQuest20.setAnswerLevelQuestion("A");
         locQuest20.setAttributeAmount(2, 0, 3);
-        locQuestArray[QuestionType.knowledge.ordinal()][19] = locQuest20;
+        locQuestArray[QuestionType.knowledge.ordinal()][4] = locQuest20;
         
         Question locQuest21 = new Question();
         locQuest21.setQuestion("When do we gain our testimony of a gospel principle?");
@@ -276,7 +280,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - After bearing lots of testimony");
         locQuest21.setAnswerLevelQuestion("B");
         locQuest21.setAttributeAmount(3, 0, 2);
-        locQuestArray[QuestionType.faith.ordinal()][20] = locQuest21;
+        locQuestArray[QuestionType.faith.ordinal()][5] = locQuest21;
         
         Question locQuest22 = new Question();
         locQuest22.setQuestion("Why do we have to have weaknesses?");
@@ -285,7 +289,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - That's just the way life is");
         locQuest22.setAnswerLevelQuestion("B");
         locQuest22.setAttributeAmount(4, 1, 0);
-        locQuestArray[QuestionType.faith.ordinal()][21] = locQuest22;
+        locQuestArray[QuestionType.faith.ordinal()][6] = locQuest22;
         
         Question locQuest23 = new Question();
         locQuest23.setQuestion("What should we be hoping for?");
@@ -294,7 +298,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - The Atonement and Eternal Life");
         locQuest23.setAnswerLevelQuestion("C");
         locQuest23.setAttributeAmount(2, 1, 2);
-        locQuestArray[QuestionType.knowledge.ordinal()][22] = locQuest23;
+        locQuestArray[QuestionType.knowledge.ordinal()][5] = locQuest23;
         
         Question locQuest24 = new Question();
         locQuest24.setQuestion("Charity is _____. (Fill in the blank)");
@@ -303,7 +307,7 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - The pure love of Christ");
         locQuest24.setAnswerLevelQuestion("C");
         locQuest24.setAttributeAmount(0, 2, 3);
-        locQuestArray[QuestionType.knowledge.ordinal()][23] = locQuest24;
+        locQuestArray[QuestionType.knowledge.ordinal()][6] = locQuest24;
         
         Question locQuest25 = new Question();
         locQuest25.setQuestion("By _______ ye may know the truth of all things. (Fill in the blank)");
@@ -312,10 +316,11 @@ public class QuestionArray implements Serializable{
                 + "\nC" + " - Reading lots of Scripture");
         locQuest25.setAnswerLevelQuestion("B");
         locQuest25.setAttributeAmount(2, 2, 1);
-        locQuestArray[QuestionType.faith.ordinal()][24] = locQuest25;
+        locQuestArray[QuestionType.faith.ordinal()][7] = locQuest25;
         
 
         return locQuestArray;
     }
     
+  
 }

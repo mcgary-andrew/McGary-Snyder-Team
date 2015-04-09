@@ -25,11 +25,9 @@ public class LocationView extends View {
         super("\n");
         questions = new QuestionArray();
         Scene scene = questions.getScene();
-        Question locQuestion = questions.getCurrentQuestion();
-        this.setPromptMessage(locQuestion.getQuestion() + "\n" + locQuestion.getPossibleAnswers());
-        
-
     }
+    
+    
 
     
    @Override
@@ -50,10 +48,16 @@ public class LocationView extends View {
         }else{
             System.out.println("Wrong");
         }
-        MapView mapView = new MapView();
+        MapView mapView = new MapView(this);
         mapView.display();
         return false;
         }
     
+    @Override 
+    public void display() {
+        Question locQuestion = questions.getNextLocationQuestion();
+        this.setPromptMessage(locQuestion.getQuestion() + "\n" + locQuestion.getPossibleAnswers());
+        super.display();
+    }
     
 }

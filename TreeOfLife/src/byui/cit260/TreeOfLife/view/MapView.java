@@ -19,8 +19,8 @@ import treeoflife.TreeOfLife;
  * @author Andrew
  */
 public class MapView extends View {
-
-    MapView() {
+    LocationView locationView = new LocationView();;
+    MapView(LocationView locationView) {
         super("\n"
             + "\n-----------------------------------------"
             + "\n| Location Menu"
@@ -29,6 +29,8 @@ public class MapView extends View {
             + "\nG - Game Menu"
             + "\nE - Exit"
             + "\n-----------------------------------------");
+        if(locationView != null)
+            this.locationView = locationView;
     } 
 
     @Override
@@ -39,8 +41,6 @@ public class MapView extends View {
                 
         switch (selection){
             case 'A': // Answer Question
-                LocationView locationView = null;
-                locationView = new LocationView();
                 locationView.display();
                 break;
             case 'G': // Go to game menu
