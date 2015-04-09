@@ -6,6 +6,7 @@
 package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.model.Actors;
+import byui.cit260.TreeOfLife.model.QuestionArray;
 import java.util.Scanner;
 import treeoflife.TreeOfLife;
 
@@ -74,6 +75,9 @@ public class ActorMenuView extends View {
             TreeOfLife.currentGame.setObedience(5);
         }
         ActorReportView ARView = new ActorReportView();
+        TreeOfLife.currentGame.setScene(0);
+        TreeOfLife.currentGame.setQuestionNumber(0);
+        
         ARView.display();
     }
 

@@ -20,6 +20,41 @@ public class Game implements Serializable {
         private double faith;
         private double knowledge;
         private Map map;
+        private int scene;
+        private int questionNumber;
+//        private int [][] currentLocation;
+
+    public int getScene() {
+        return scene;
+    }
+
+    public void setScene(int scene) {
+        this.scene = scene;
+    }
+
+    public int getQuestionNumber() {
+        return questionNumber;
+    }
+
+    public void setQuestionNumber(int questionNumber) {
+        this.questionNumber = questionNumber;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+//    public int[][] getCurrentLocation() {
+//        return currentLocation;
+//    }
+//
+//    public void setCurrentLocation(int[][] currentLocation) {
+//        this.currentLocation = currentLocation;
+//    }
 
     public Map getMap() {
         return map;

@@ -63,20 +63,21 @@ public class QuestionArray implements Serializable{
     
 
     public QuestionArray() {
-        questionArray = new String[3][25];
+        questionArray = new String[3][24];
         this.createLocationQuestionArray();
         currentXLocation = 0;
         currentYLocation = 0;
-        this.updateCurrentLocation();
+//        this.updateCurrentLocation();
     }
 
-    public void updateCurrentLocation(){
-        currentQuestion = locQuestArray[currentXLocation][currentYLocation];
+    public Question updateCurrentLocation(int currentX, int currentY){
+        currentQuestion = locQuestArray[currentX][currentY];
+        return currentQuestion;
     }
     
     public Question getNextLocationQuestion() {
         this.updateXAndY();
-        this.updateCurrentLocation();
+//        this.updateCurrentLocation();
         return currentQuestion;
     }
     
@@ -93,7 +94,7 @@ public class QuestionArray implements Serializable{
     }
     
     private Question[][] createLocationQuestionArray() {
-         locQuestArray = new Question[24][24];
+         locQuestArray = new Question[3][8];
          
         Question locQuest1 = new Question();
         locQuest1.setQuestion("How many commandments has the Lord given without a way prepared to accomplish them?");

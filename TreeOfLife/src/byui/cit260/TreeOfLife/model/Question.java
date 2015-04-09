@@ -6,6 +6,7 @@
 package byui.cit260.TreeOfLife.model;
 
 import java.io.Serializable;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -17,6 +18,8 @@ public class Question implements Serializable{
     private String possibleAnswers;
     private double attributeAmount;
     private double faithAdded;
+    private double knowledgeAdded;
+    private double obedienceAdded;
 
     public double getFaithAdded() {
         return faithAdded;
@@ -41,14 +44,16 @@ public class Question implements Serializable{
     public void setObedienceAdded(double obedienceAdded) {
         this.obedienceAdded = obedienceAdded;
     }
-    private double knowledgeAdded;
-    private double obedienceAdded;
+
 
     public double getAttributeAmount() {
         return attributeAmount;
     }
 
     public void setAttributeAmount(double faithAdded, double obedienceAdded, double knowledgeAdded) {
+        this.setFaithAdded(faithAdded);
+        this.setObedienceAdded(obedienceAdded);
+        this.setKnowledgeAdded(knowledgeAdded);
         this.attributeAmount = attributeAmount;
     }
 

@@ -17,7 +17,7 @@ public class QuestionControl {
     
     private static void createQuestion(){
         //Create a two dimentional of question objects
-        Question[][] question = new Question[5][5];
+        Question[][] question = new Question[3][8];
         
         //create a List of the different scenes in the game
         //Scene[] scenes = MapControl.getScenes();

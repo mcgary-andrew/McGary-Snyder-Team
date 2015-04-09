@@ -13,6 +13,7 @@ import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Question;
 import byui.cit260.TreeOfLife.model.QuestionArray;
 import byui.cit260.TreeOfLife.model.Scene;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -25,7 +26,8 @@ public class LocationView extends View {
     public LocationView(){
         super("\n");
         questions = new QuestionArray();
-        Scene scene = questions.getScene();
+        questions.updateCurrentLocation(TreeOfLife.currentGame.getScene(),TreeOfLife.currentGame.getQuestionNumber());
+//        Scene scene = questions.getScene();
     }
     
     
@@ -46,23 +48,44 @@ public class LocationView extends View {
         if (value.equals(locQuestion.getAnswerLevelQuestion())){
               System.out.println("Correct!!");
               double questionAttribute = locQuestion.getAttributeAmount();
-              Game attributeValue = new Game();
-              double faith = attributeValue.getFaith();
-              double obedience = attributeValue.getObedience();
-              double knowledge = attributeValue.getKnowledge();
-              double addAttribute = questionAttribute + faith + obedience + knowledge;
+              double faith = locQuestion.getFaithAdded();
+              double obedience = locQuestion.getObedienceAdded();
+              double knowledge = locQuestion.getKnowledgeAdded();
+              TreeOfLife.currentGame.setFaith(TreeOfLife.currentGame.getFaith() + faith);
+              TreeOfLife.currentGame.setObedience(TreeOfLife.currentGame.getObedience() + obedience);
+              TreeOfLife.currentGame.setKnowledge(TreeOfLife.currentGame.getKnowledge() + knowledge);
               
         }else{
             System.out.println("Wrong");
         }
-        MapView mapView = new MapView(this);
-        mapView.display();
+        
+        if(TreeOfLife.currentGame.getQuestionNumber() < 7  && TreeOfLife.currentGame.getScene() < 2){
+            TreeOfLife.currentGame.setQuestionNumber(TreeOfLife.currentGame.getQuestionNumber()+1);
+            MapView mapView = new MapView(this);
+            mapView.display();
+            return false;
+        }
+        else if(TreeOfLife.currentGame.getQuestionNumber() == 7  && TreeOfLife.currentGame.getScene() < 2) {
+            TreeOfLife.currentGame.setQuestionNumber(0);
+            TreeOfLife.currentGame.setScene(TreeOfLife.currentGame.getScene()+1);
+            
+            MapView mapView = new MapView(this);
+            mapView.display();
+            return false;
+        }
+        
+        
+        else /*if (TreeOfLife.currentGame.getQuestionNumber() == 7  && TreeOfLife.currentGame.getScene() == 2)*/
+        {            
+            System.out.println("You made it to the Tree of Life! Congratulations!");
+            System.exit(0);
+        }
         return false;
         }
     
     @Override 
     public void display() {
-        Question locQuestion = questions.getNextLocationQuestion();
+        Question locQuestion = questions.updateCurrentLocation(TreeOfLife.currentGame.getScene(), TreeOfLife.currentGame.getQuestionNumber());
         this.setPromptMessage(locQuestion.getQuestion() + "\n" + locQuestion.getPossibleAnswers());
         super.display();
     }

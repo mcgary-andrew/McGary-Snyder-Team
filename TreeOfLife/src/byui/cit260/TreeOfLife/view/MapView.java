@@ -58,26 +58,26 @@ public class MapView extends View {
         
         return true;
     }
-    private void answerLocationQuestion() {
-        
-        QuestionArray locationQuestion = new QuestionArray();
-        Question question = locationQuestion.getNextLocationQuestion();
-        String nextQuestion = question.getQuestion();
-        String possibleAnswers = question.getPossibleAnswers();
-        this.console.println(nextQuestion + possibleAnswers);
-        
-        String response = this.getInput();
-        String answerToQuestion = question.getAnswerLevelQuestion();
-        String userResponse = response.toUpperCase();
-        String answer = answerToQuestion.toUpperCase();
-        
-        if(userResponse.equals(answer)){
-            this.console.println("Correct");
-        }else {
-            this.console.println("Incorrect");
-        }
-        
-        }
+//    private void answerLocationQuestion() {
+//        
+//        QuestionArray locationQuestion = new QuestionArray();
+//        Question question = locationQuestion.updateCurrentLocation();
+//        String nextQuestion = question.getQuestion();
+//        String possibleAnswers = question.getPossibleAnswers();
+//        this.console.println(nextQuestion + possibleAnswers);
+//        
+//        String response = this.getInput();
+//        String answerToQuestion = question.getAnswerLevelQuestion();
+//        String userResponse = response.toUpperCase();
+//        String answer = answerToQuestion.toUpperCase();
+//        
+//        if(userResponse.equals(answer)){
+//            this.console.println("Correct");
+//        }else {
+//            this.console.println("Incorrect");
+//        }
+//        
+//        }
     private String locationQuestionInput() {
         boolean valid = false; //indicates if the input has been recieved
         String response = "";
