@@ -7,6 +7,7 @@ package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.MapControl;
 import byui.cit260.TreeOfLife.exceptions.MapControlException;
+import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Question;
@@ -44,7 +45,13 @@ public class LocationView extends View {
         
         if (value.equals(locQuestion.getAnswerLevelQuestion())){
               System.out.println("Correct!!");
-
+              double questionAttribute = locQuestion.getAttributeAmount();
+              Game attributeValue = new Game();
+              double faith = attributeValue.getFaith();
+              double obedience = attributeValue.getObedience();
+              double knowledge = attributeValue.getKnowledge();
+              double addAttribute = questionAttribute + faith + obedience + knowledge;
+              
         }else{
             System.out.println("Wrong");
         }
